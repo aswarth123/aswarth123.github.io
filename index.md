@@ -15,7 +15,7 @@
    *This was also an easy task among all other tasks and I managed to complete it in the 7 days extended period and I fell that I
     managed to do this task completly.*
     *[View Code]*()
- ### TASK-10 (DID EARLIER)
+### TASK-10 (DID EARLIER)
    *Watching CS50 lectures was a boring task but I managed to watch it atlest till week-4 but I was unable to complete all the 
    assignments of that because I utilised this time to do the other tasks.*
    *[View code]*()
