@@ -6,17 +6,19 @@
 ### TASK-2 (DID EARLIER)
    *I completed this task and was able to finish most of the programs as I had studied C and C++ in my 11th and 12th so I completed 
    this task comfortably.*
-   link[TASK-2](https://github.com/aswarth123/amfoss-tasks/tree/master/task%202)
+   *[View code]*(https://github.com/aswarth123/amfoss-tasks/tree/master/task%202)
 ### TASK-7 (DID NOT DO EARLIER)
    *I managed to do this task with the help of online websites and using the Regex. I also felt happy to see the correct output.
     This was the task which ate my most of the time and atleast I was finally able to complete it.*
+    *[View code]*()
 ### TASK-8 (DID NOT DO EARLIER)
    *This was also an easy task among all other tasks and I managed to complete it in the 7 days extended period and I fell that I
     managed to do this task completly.*
-     link[View Code](
+    *[View Code]*()
  ### TASK-10 (DID EARLIER)
    *Watching CS50 lectures was a boring task but I managed to watch it atlest till week-4 but I was unable to complete all the 
    assignments of that because I utilised this time to do the other tasks.*
+   *[View code]*()
 ## THE TASKS I DID'NT COMPLETE
 ### TASK-3,TASK-4,TASK-5,TASK-6
    *These tasks I could not complete due to lack of time, bombardment of asiignments, lab tests and their viva's. These are the 
