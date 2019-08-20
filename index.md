@@ -37,7 +37,7 @@
 ## FUTURE PLANS
    *My intrest is to work on deep learning which is a part of machine learning and do some projects in that. And before planning 
    further I decided to explore the things and then decide in which field I am the most interested in.Like this I will be exploring 
-   and will finally choose the thing which I like the most.* 
+   all the areas and will finally choose the area which I like the most.* 
 
 
    
