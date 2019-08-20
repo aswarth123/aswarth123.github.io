@@ -16,7 +16,7 @@
     managed to do this task completly.*
     [View Code](https://github.com/aswarth123/amfoss-tasks/blob/master/TASK-8/code)
 ### TASK-10 (DID EARLIER)
-   *Watching CS50 lectures was a boring task but I managed to watch it atlest till week-4 but I was unable to complete all the 
+   *Watching CS50 lectures was a boring task but I managed to watch lectures till week-4 but I was unable to complete all the 
    assignments of that because I utilised this time to do the other tasks.*
    [View code](https://github.com/aswarth123/amfoss-tasks/tree/master/task%2010)
 ## THE TASKS I DID'NT COMPLETE
@@ -26,8 +26,8 @@
    tasks first and then think about it afterwords but there is no time left so I am unable to procede with them.*
 ## ELIGIBILITY FOR AMFOSS
    *I am an enthusiastic person and love programming. I like to learn new things and explore things. I can contribute back to 
-   the club in many ways especilly in the logic and algorithm developing which is my stronger area. I will definately contibute
-   to club in all the possible ways I can for the progress of the club.*
+   the club in many ways especilly in the logic and algorithm development which are my stronger area. I will definately contibute
+   to the club in all possible ways for development of the club.*
 ## SELF-EVALUATION
    *I am felling that I have made an appriciable progress in the tasks in the extended time but I could have made more progress
    if the deadline allowed me to do so.*
@@ -36,9 +36,8 @@
    those and now I am a bit happy that I have made a progress in that and completed some of those tasks also.*
 ## FUTURE PLANS
    *My intrest is to work on deep learning which is a part of machine learning and do some projects in that. And before planning 
-   further I decided to explore the things and then decide in which field I am the most interested in. Adhering to this I also
-   took up an Arduino project offered by the Ammachi lab to explore that and to get some insight into the hardware working also.
-   Like this I will be exploring and will finally choose the thing which I like the most.* 
+   further I decided to explore the things and then decide in which field I am the most interested in.Like this I will be exploring 
+   and will finally choose the thing which I like the most.* 
 
 
    
