@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+  
+
+  <style>
+    
+      .carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 4px 4px 8px 4px rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(-180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+}
+ .display-7{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  
+}
+
+.flip-card-back {
+  
+
+  transform: rotateY(180deg);
+}
+.badge{
+  background-color: orangered;
+  
+}
+.f{
+  color: orangered;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+.progress {
+  width: 150px;
+  height: 150px;
+  background: none;
+  position: relative;
+}
+
+.progress::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 16px solid #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress>span {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.progress .progress-left {
+  left: 0;
+}
+
+.progress .progress-bar {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 16px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+}
+
+.progress .progress-left .progress-bar {
+  left: 100%;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+
+.progress .progress-right {
+  right: 0;
+}
+
+.progress .progress-right .progress-bar {
+  left: -100%;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-right: 0;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
+}
+
+.progress .progress-value {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+.rounded-lg {
+  border-radius: 16px;
+}
+
+.text-gray {
+  color: #aaa;
+}
+
+div.h4 {
+  line-height: 3rem;
+}
+.maps iframe{
+     width: 100%;
+     height: 500px;
+   }  
+   .bch{
+    
+    background:  rgb(224, 134, 24);
+  
+    float: left;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition: all 0.5s ease-in-out;
+    
+    border: 0px;
+    color: #fff;
+    
+}
+/* Style all font awesome icons */
+.aa {
+  padding: 15px;
+  font-size: 30px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+/* Add a hover effect if you want */
+.aa:hover {
+  background-color: white;
+  color: rgb(248, 174, 83);
+  text-decoration: none;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.w, .q,.e,.r  {
+  background: rgb(248, 174, 83);
+  color: white;
+  margin: 0 15px 5px 0;
+  
+  
+  border:  2px solid #fff;
+}
+.profile-card-2 .card-img-block{
+  
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.profile-card-2 .card-body{
+    position:relative;
+
+}
+.profile-card-2 .profile {
+  border-radius: 50%;
+  position: absolute;
+  top: -42px;
+  left: 40%;
+  
+  border: 3px solid rgba(255, 255, 255, 1);
+  font-size: 60px;
+  width: 80px;
+  text-align: center;
+ 
+}
+.profile-card-2 h3{
+    font-weight:600;
+    color: darkorange;
+    text-align: center;
+}
+.profile-card-2 .card-text{
+    font-weight:300;
+    
+    text-align: center;
+  
+}
+.profile-card-2 .icon-block{
+    text-align: center;
+    padding-top: 20px;
+    width:100%;
+}
+.profile-card-2 .icon-block a {
+    text-decoration:none;
+}
+.profile-card-2 i {
+  display: inline-block;
+  background-color: darkorange;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+    margin:0 5px;
+}
+.profile-card-2 i:hover {
+  background-color: white;
+  color:darkorange;
+  border: 1px solid darkorange;
+}
+
+
+  
+  </style>
+  <script>
+    $(function() {
+
+$(".progress").each(function() {
+
+var value = $(this).attr('data-value');
+var left = $(this).find('.progress-left .progress-bar');
+var right = $(this).find('.progress-right .progress-bar');
+
+if (value > 0) {
+ if (value <= 50) {
+   right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+ } else {
+   right.css('transform', 'rotate(180deg)')
+   left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+ }
+}
+
+})
+
+function percentageToDegrees(percentage) {
+
+return percentage / 100 * 360
+
+}
+
+});
+
+
+</script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+          <div class="navbar-brand" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="aswlogo.png" height="50px" width="50px">
+            <div class="dropdown">
+          
+                  
+              
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                 
+                 
+                  <div class="card profile-card-2" style="height: 500px; width:400px">
+                      <div class="card-img-block">
+                          <img class="img-fluid" src="aswlogo.png" alt="Card image cap">
+                      </div>
+                      <div class="card-body pt-5">
+                          <h1 class="profile" style="background-color: rgb(255, 0, 0); color: white; ">A</h1>
+                          <h3 class="card-title" style="padding-top: 40px;">Aswarth Narayana</h3>
+                          <h6 class="card-text"><b>Competetive prgrammer and Web developer</b></h6>
+                          <div class="icon-block"><a href="#"><i class="fa fa-google-plus"></i></a><a href="#"> <i class="fa fa-linkedin"></i></a><a href="#"> <i class="fa fa-github"></i></a></div>
+                      </div>
+                  </div>
+                  
+                   
+                    
+                
+               
+              </div>
+            </div>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home
+                      <span class="sr-only">(current)</span>
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#aboutme">About Me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#education">Education</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact1">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      <header>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style="background-image: url('pg1.jpg')">
+              <div class="carousel-caption">
+                
+                <h2 class="display-4" style="padding-bottom: 2.5%;">
+                  A Competetive Programmer. <br>Web Developer.  
+                </h2>
+                <h1 class="display-1" > &lt; / &gt; </h1>
+              </div>
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('pg2.jpg')">
+              <div class="carousel-caption">
+                <h2 class="display-4" style="padding-bottom: 5%;">
+                  Stock Market Analyser.<br>
+                     <h1 class="display-1" style="padding-bottom: 2.5%;">&lt; &#36; &gt;</h1>
+                </h2>
+                
+              </div>
+            </div>
+           
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+        </div>
+      </header>
+      
+      
+        
+      
+      <section class="py-5" id="aboutme">
+        <div class="container-fluid" >  
+          <h3 class="display-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); text-align: center; padding-top: 19px;">ABOUT <span class="f">ME</span></h3>
+        <div class="row" >
+          
+          <div class="col-md-3" style="padding-top: 50px;">
+            
+            <img src="coimg.jpg" class="rounded-circle "height="350" width="350">
+            
+          </div>
+          <div class="col-lg-9">
+            <h1 class="display-1" style="color: rgb(143, 141, 141); padding-right: 98%;">&#8220;</h1>
+            <h1 class="display-7" style="padding-top: 50px; padding-left:30px ; padding-right: 20px; text-align: center; color: rgb(143, 141, 141);">I am an avid competetive <span class="f">programmer and web</span> develo<span class="f">per.</span></h1>
+            <h1 class="display-1" style="color: orangered; padding-top: 50px; padding-left: 98%;">&#8221;</h1>
+          </div>
+          </div>
+        </div>
+      
+        
+        <div class="container-fluid" >
+          <div class="row">
+          <div class="col-md-9" style="padding-top: 30px;">
+            <h1 class="display-1" style="color: rgb(143, 141, 141); padding-bottom: 50px;">&#8220;</h1>
+            <h1 class="display-7" style=" text-align: center; color: rgb(143, 141, 141);">I am also a stock <span class="f">market enthusiast.</span></h1>
+            <h1 class="display-1" style="color: orangered; padding-top: 50px; padding-left: 98%;">&#8221;</h1>
+          </div>
+          <div class="col-md-3" style="padding-top: 50px;">
+            <img src="bvsb.jpg" class="rounded-circle "height="300" width="300" >
+
+          </div>
+          </div>
+        </div>
+        <div class="container py-5" id="skills">
+          <h3 class="display-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); text-align: center; padding-top: 19px;">SKI<span class="f">LLS</span></h3>
+          <div class="row" style="padding-top: 30px;">
+        <div class="col-xl-3 col-lg-6 mb-4">
+              <div class="bg-white rounded-lg p-5 shadow">
+                <div class="row text-center mt-4">
+                    <img src="html.png" height="200px" width="200px" style="padding-bottom: 30px;">
+             
+                    </div>
+        
+               
+                <div class="progress mx-auto" data-value='89' >
+                  <span class="progress-left">
+                                <span class="progress-bar"  style="color: darkorange;"></span>
+                  </span>
+                  <span class="progress-right">
+                                <span class="progress-bar" style="color: darkorange;"></span>
+                  </span>
+                  <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                    <div class="h2 font-weight-bold" style="  color: rgb(88, 88, 88);">89</div>
+                  </div>
+                </div>
+                <div class="row text-center mt-4">
+                    <h2 class="h3 font-weight-bold text-center mb-4 " style="padding-left: 15px; color:rgb(143, 141, 141)">&lt; HTML 5 &gt;</h2>
+                </div>
+              
+              </div>
+            </div>
+        
+            <div class="col-xl-3 col-lg-6 mb-4">
+              <div class="bg-white rounded-lg p-5 shadow">
+                <div class="row text-center mt-4">
+                <img src="css.jpg" height="200px" width="200px" style="padding-bottom: 30px;">
+                </div>
+                <!-- Progress bar 2 -->
+                <div class="progress mx-auto" data-value='76'>
+                  <span class="progress-left">
+                                <span class="progress-bar border-primary"></span>
+                  </span>
+                  <span class="progress-right">
+                                <span class="progress-bar border-primary"></span>
+                  </span>
+                  <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                    <div class="h2 font-weight-bold"  style="color: rgb(88, 88, 88);"> 76</div>
+                  </div>
+                </div>
+                <div class="row text-center mt-4">
+                  <h2 class="h3 font-weight-bold text-center mb-4 " style="padding-left: 40px; color:rgb(143, 141, 141)">&lt; CSS &gt;</h2>
+              </div>
+              </div>
+            </div>
+        
+            <div class="col-xl-3 col-lg-6 mb-4">
+              <div class="bg-white rounded-lg p-5 shadow">
+                <div class="row text-center mt-4">
+                  <img src="js.png" height="200px" width="200px" style="padding-bottom: 30px;">
+                  </div>
+        
+                <!-- Progress bar 3 -->
+                <div class="progress mx-auto" data-value='72'>
+                  <span class="progress-left">
+                                <span class="progress-bar border-warning"></span>
+                  </span>
+                  <span class="progress-right">
+                                <span class="progress-bar border-warning"></span>
+                  </span>
+                  <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                    <div class="h2 font-weight-bold" style="color: rgb(88, 88, 88);">72</div>
+                  </div>
+                </div>
+                <!-- END -->
+                <div class="row text-center mt-4">
+                  <h2 class="h3 font-weight-bold text-center mb-4 " style="padding-left: 50px; color:rgb(143, 141, 141)">&lt; JS &gt;</h2>
+              </div>
+                
+                <!-- END -->
+              </div>
+            </div>
+        
+            <div class="col-xl-3 col-lg-6 mb-4" >
+              <div class="bg-white rounded-lg p-5 shadow" >
+                <div class="row text-center mt-4">
+                  <img src="clogo.png" height="220px" width="200px" style="padding-bottom: 20px;text-align: center;">
+                  </div>  
+        
+                <!-- Progress bar 4 -->
+                <div class="progress mx-auto" data-value='93'>
+                  <span class="progress-left">
+                                <span class="progress-bar " style="color: blueviolet;"></span>
+                  </span>
+                  <span class="progress-right">
+                                <span class="progress-bar " style="color: blueviolet;"></span>
+                  </span>
+                  <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                    <div class="h2 font-weight-bold" style="padding-left: 10px; color:rgb(88, 88, 88);">93</div>
+                  </div>
+                </div>
+                <div class="row text-center mt-2">
+                  <h2 class="h3 font-weight-bold text-center mb-4 " style="padding-left: 35px; color:rgb(143, 141, 141)">&lt; C++ &gt;</h2>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container" id="education">
+          <h3 class="display-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:   rgb(143, 141, 141); text-align: center; padding-top: 69px;">EDUC<span class="f">ATION</span></h3>
+          <div class="row" style="padding-top: 40px;">
+            <div class="col-sm-4">
+              <div class="container">
+                
+                
+                <div class="flip-card" style="padding-top: 10px;">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="padding-top: 30px;background-color: white;">
+                      
+                      <img src="schoollogo.png" alt="Somerville Scholl" style="width:300px;height:300px;">
+                      <p class="lead" style="padding-top: 10px ;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); font-size: x-large;">SECONDARY<span class="f"> EDUCATION</span></p>
+                    </div>
+                  <div class="flip-card-back" >
+                    
+                     <h1 class="display-9" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(218, 214, 214); text-align: center; background-color: darkorange; height: 15%; padding-top: 6px;">X<sup>th</sup></h1>
+                      <div class="container" style="padding-top: 50px; text-align: center;" >
+                          
+                        <div class="progress mx-auto" data-value='96'>
+                          <span class="progress-left">
+                                        <span class="progress-bar border-warning" style="border-color: darkorange;"></span>
+                          </span>
+                          <span class="progress-right">
+                                        <span class="progress-bar border-warning " style="border-color: darkorange;"></span>
+                          </span>
+                          <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                            <div class="h2 font-weight-bold" style="color: rgb(88, 88, 88);">9.6</div>
+                          </div>
+                        </div>
+                        <div class="row text-center mt-4">
+                          <div class="col-6 border-right">
+                            <div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2016</div>
+                          </div>
+                          <div class="col-6">
+                            <div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2017</div>
+                          </div>
+                        </div>          
+                        <p class="lead" style="color: rgb(143, 141, 141); font-size: x-small; text-align: right;">grading scale:- CGPA</p>
+                                  
+                             
+                          
+                      </div>    
+                      </div>
+                  
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="container">
+                
+                
+                <div class="flip-card" style="padding-top: 10px;">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="padding-top: 30px;background-color: white;">
+                      
+                      <img src="schoollogo.png" alt="Somerville Scholl" style="width:300px;height:300px;">
+                      <p class="lead"style="padding-top: 10px font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141);">HIGHER SECON<span class="f">DARY EDUCATION</span></p>
+                    </div>
+                  <div class="flip-card-back" >
+                    
+                     <h1 class="display-9" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(218, 214, 214); text-align: center; background-color: darkorange; height: 15%; padding-top: 6px;">XII<sup>th</sup></h1>
+                      <div class="container" style="padding-top: 50px; text-align: center;" >
+                          
+                        <div class="progress mx-auto" data-value='84'>
+                          <span class="progress-left">
+                                        <span class="progress-bar border-primary" ></span>
+                          </span>
+                          <span class="progress-right">
+                                        <span class="progress-bar border-primary " ></span>
+                          </span>
+                          <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                            <div class="h2 font-weight-bold" style="color: rgb(88, 88, 88);">84</div>
+                          </div>
+                        </div>
+                        <div class="row text-center mt-4">
+                          <div class="col-6 border-right">
+                            <div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2018</div>
+                          </div>
+                          <div class="col-6">
+                            <div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2019</div>
+                          </div>
+                        </div>          
+                        <p class="lead" style="color: rgb(143, 141, 141); font-size: x-small; text-align: right;">grading scale:- PERCENTAGE</p>
+                                  
+                             
+                          
+                      </div>    
+                      </div>
+                  
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="container">
+                
+                
+                <div class="flip-card" style="padding-top: 10px;">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="padding-top: 30px;background-color: white;">
+                      
+                      <img src="collagelogo.png" alt="Amrita university" style="width:300px;height:300px;">
+                      <p class="lead" style="padding-top: 10px ;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); font-size: x-large;">GRADU<span class="f">ATION</span></p>
+                    </div>
+                  <div class="flip-card-back" >
+                    
+                     <h1 class="display-9" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(218, 214, 214); text-align: center; background-color: darkorange; height: 15%; padding-top: 6px;">Btech CSE</h1>
+                      <div class="container" style="padding-top: 50px; text-align: center;" >
+                          
+                        <div class="progress mx-auto" data-value='94.1'>
+                          <span class="progress-left">
+                                        <span class="progress-bar border-success" ></span>
+                          </span>
+                          <span class="progress-right">
+                                        <span class="progress-bar border-success " ></span>
+                          </span>
+                          <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                            <div class="h2 font-weight-bold" style="color: rgb(88, 88, 88);">9.41</div>
+                          </div>
+                        </div>
+                        <div class="row text-center mt-4">
+                          <div class="col-6 border-right">
+                            <div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2019</div>
+                          </div>
+                          <div class="col-6">
+                            <div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2023</div>
+                          </div>
+                        </div>          
+                        <p class="lead" style="color: rgb(143, 141, 141); font-size: x-small; text-align: right;">grading scale:- CGPA</p>
+                                  
+                             
+                          
+                      </div>    
+                      </div>
+                  
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="container" id="contact1">
+              <h3 class="display-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:   rgb(143, 141, 141); text-align: center; padding-top: 110px;">CONTACT<span class="f"> ME</span></h3>
+              <div class="row" id="contact">
+                <div class="container mt-5" >
+                
+                    <div class="row" style="height:550px;">
+                      <div class="col-md-6 maps" style="padding-top: 20px;" >
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.668741021103!2d76.48868421405088!3d9.093910393475891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0602e7b4a2049d%3A0x3af3246b5138db0f!2sAmrita%20Vishwa%20Vidyapeetham%2C%20Amritapuri%20Campus!5e0!3m2!1sen!2sin!4v1585492393742!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                      </div>
+                      <div class="col-md-6" style="padding-top: 60px;">
+                      
+                        <form action="">
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="form-group" style="padding-top: 20px;">
+                                <input type="text" class="form-control mt-2" placeholder="First Name" required>
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="form-group" style="padding-top: 20px;">
+                                <input type="text" class="form-control mt-2" placeholder="Last Name" required>
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="form-group" style="padding-top: 20px;">
+                                <input type="email" class="form-control mt-2" placeholder="Email" required>
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="form-group" style="padding-top: 20px;">
+                                <input type="number" class="form-control mt-2" placeholder="Telepho-no" required>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <div class="form-group" style="padding-top: 20px;">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Message for me" rows="5" required></textarea>
+                              </div>
+                            </div>
+                            
+                            <div class="col-12" style="padding-top: 20px;">
+                              <button class="btn btn-light btn-block bch"  type="submit">Send</button>
+                            </div>
+                          </div>
+                        </form>
+                        
+                
+                     </div>
+                </div>
+                </div>
+                
+            </div>
+
+
+
+          </div>
+        </div>
+         </section>
+      <footer class="container-fluid" style="background-color: rgb(248, 174, 83);">
+        <h1 class="display-8" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; text-align: center; padding-top: 40px; ">YOU CAN ALSO FIND ME AT</h1>
+      
+          
+        
+          
+          <div style="padding-bottom: 50px; text-align: center; padding-top: 30px;">
+            
+         
+         
+          
+         
+           <a href="#" class="fa fa-twitter q aa"></a>
+           <a href="#" class="fa fa-linkedin w aa"></a>
+           <a href="#" class="fa fa-google e aa"></a>
+           <a href="#" class="fa fa-github r aa"></a>
+          
+         
+
+         
+      
+       </div>
+
+       
+      
+      </footer>
+      <p style="background-color: darkorange; color: white; text-align: center;"> Copyright &copy cvaswarth 2020</p>
+</body>
+</html>
+
+
+
