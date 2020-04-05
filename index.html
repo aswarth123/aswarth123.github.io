@@ -12,7 +12,7 @@
   
 
   <style>
-    
+
       .carousel-item {
   height: 100vh;
   min-height: 350px;
@@ -173,44 +173,9 @@ div.h4 {
 }
 
 
-@media (max-width: 575.98px) {
-
-  #contact{padding-bottom: 800px;}
-  #contact .maps iframe{
-    width: 100%;
-    height: 450px;
-  }
- }
 
 
-@media (min-width: 576px) {
 
-   #contatct{padding-bottom: 800px;}
-
-   #contact .maps iframe{
-     width: 100%;
-     height: 450px;
-   }
- }
-
-@media (min-width: 768px) {
-
-  #contact{padding-bottom: 350px;}
-
-  #contact .maps iframe{
-    width: 100%;
-    height: 500px;
-  }
-}
-
-@media (min-width: 992px) {
-  #contact{padding-bottom: 200px;}
-
-   #contact .maps iframe{
-     width: 100%;
-     height: 500px;
-   }
-}
 
 
 #author a{
@@ -327,6 +292,10 @@ div.h4 {
   
   </style>
   <script>
+   
+
+
+
     $(function() {
 
 $(".progress").each(function() {
@@ -338,7 +307,8 @@ var right = $(this).find('.progress-right .progress-bar');
 if (value > 0) {
  if (value <= 50) {
    right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
- } else {
+ } 
+ else {
    right.css('transform', 'rotate(180deg)')
    left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
  }
@@ -416,7 +386,7 @@ return percentage / 100 * 360
       </nav>
       
       <header>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -460,11 +430,11 @@ return percentage / 100 * 360
         
       
       <section class="py-5" id="aboutme">
-        <div class="container-fluid" >  
+        <div class="container-fluid fade-in "  >  
           <h3 class="display-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); text-align: center; padding-top: 2%;">ABOUT <span class="f">ME</span></h3>
         <div class="row" >
           
-          <div class="col-lg-4 col-md-6 col-sm-6" style="padding-top: 5%;">
+          <div class="col-lg-4 col-md-6 col-sm-6"  style="padding-top: 5%;">
             
             <img src="coimg.jpg" class="rounded-circle mx-auto d-block" height="100%" width="100%" style="max-height: 400px; max-width: 400px; min-height: 350px; min-width: 320px;">
             
@@ -746,34 +716,34 @@ return percentage / 100 * 360
                 
                     <div class="row" style="height: 500px;">
 
-                      <div class="col-lg-6 col-md-6 col-sm-6 maps" style="padding-top: 8%;" >
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.668741021103!2d76.48868421405088!3d9.093910393475891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0602e7b4a2049d%3A0x3af3246b5138db0f!2sAmrita%20Vishwa%20Vidyapeetham%2C%20Amritapuri%20Campus!5e0!3m2!1sen!2sin!4v1585492393742!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>
+                      <div class="col-6" style="padding-top: 8%;" >
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.668741021103!2d76.48868421405088!3d9.093910393475891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0602e7b4a2049d%3A0x3af3246b5138db0f!2sAmrita%20Vishwa%20Vidyapeetham%2C%20Amritapuri%20Campus!5e0!3m2!1sen!2sin!4v1585492393742!5m2!1sen!2sin" width="90%" height="100%" frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>
                       </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 12%; ">
+                      <div class="col-6" style="padding-top: 12%; ">
                         <div class="container-fluid">
                         <form>
                           <div class="form-group row">
-                            <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="col-6">
                               <div class="form-group" style="padding-top: 20px;">
                                 <input type="text" class="form-control mt-2" placeholder="First Name" required>
                               </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="col-6">
                               <div class="form-group" style="padding-top: 20px;">
                                 <input type="text" class="form-control mt-2" placeholder="Last Name" required>
                               </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="col-6">
                               <div class="form-group" style="padding-top: 20px;">
                                 <input type="email" class="form-control mt-2" placeholder="Email" required>
                               </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="col-6">
                               <div class="form-group" style="padding-top: 20px;">
                                 <input type="number" class="form-control mt-2" placeholder="Telepho-no" required>
                               </div>
                             </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="col-12">
                               <div class="form-group" style="padding-top: 20px;">
                                 <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Message for me" rows="5" required></textarea>
                               </div>
@@ -790,7 +760,7 @@ return percentage / 100 * 360
                     </div>
               </div>
             </section>
-      <div class="container-fluid " style="background-color: rgb(248, 174, 83);">
+      <div class="container-fluid " style="background-color: rgb(248, 174, 83); margin-top: 10%;">
         <h1 class="display-8" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; text-align: center; padding-top: 40px; ">YOU CAN ALSO FIND ME AT</h1>
         <div class="row" style="padding-bottom: 50px; padding-top: 30px;">
           <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center;">
