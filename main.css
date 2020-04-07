@@ -1,0 +1,60 @@
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    font-family: fantasy;
+    font-weight: bold;
+    font-size: 28px;
+}
+.box1, .box2, .box3{
+    width: 30%;
+    margin: 5% 1% 0 2%;
+    background-color: grey;
+    border: 2px solid black;
+    float: left;
+    
+}
+.box1 > .float, .box2 > .float, .box3 > .float{
+    float: right;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 150px;
+    text-align: center; 
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    background-color: pink;
+    font-weight: bold;
+}
+.box2 > .float{
+    background-color: orangered;
+    color: white;
+}
+.box3 > .float{
+    background-color: sandybrown
+    
+}
+
+p{
+    clear: right;
+    margin: 0 15px 20px 15px;
+    font-size: 16px;
+}
+@media (max-width: 991px) and (min-width: 768px){
+    .box3{
+        clear: right;
+        margin: 3% 2% 0 2%;
+        width: 95%;
+    }
+    .box1, .box2{
+        width: 46%;
+
+}
+}
+@media (max-width: 767px) {
+    .box1, .box2, .box3{
+        width: 95%;
+        margin-top: 20px;
+    }
+}
