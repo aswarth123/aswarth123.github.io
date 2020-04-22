@@ -103,7 +103,7 @@ function buildAndShowHomeHTML (categories) {
       // variable's name implies it expects.
       // var chosenCategoryShortName = ....
       
-      var chosenCategoryShortName = chooseRandomCategory(categories).short_name;
+      var chosenCategoryShortName ="'" +chooseRandomCategory(categories).short_name + "'";
 
       var f=homeHtml;
       f=insertProperty(f,"randomCategoryShortName",chosenCategoryShortName);
