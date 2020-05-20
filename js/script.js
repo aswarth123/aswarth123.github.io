@@ -1,14 +1,15 @@
-function counthtmlscore(){
-  var x=document.getElementById("html-progress");
-  var p=document.getElementById("htmlscore");
+function countscore(id,score,no){
+  var x=document.getElementById(id);
+  var p=document.getElementById(score);
   var z=p.textContent;
+  var delay=1800/no;
   
   var i;
   if(elementInViewport2(x) && z==0){
-    for(i=0;i<89;i++){
+    for(i=0;i<no;i++){
       setTimeout(function() {z++;
         p.textContent=z;
-      },20.22*i);
+      },delay*i);
     }
   }
   if(!elementInViewport2(x)){
@@ -16,60 +17,7 @@ function counthtmlscore(){
     z=0;
   }
 }
-function countcssscore(){
-  var x=document.getElementById("css-progress");
-  var p=document.getElementById("cssscore");
-  var z=p.textContent;
-  
-  var i;
-  if(elementInViewport2(x) && z==0){
-    for(i=0;i<76;i++){
-      setTimeout(function() {z++;
-        p.textContent=z;
-      },23.68*i);
-    }
-  }
-  if(!elementInViewport2(x)){
-    p.textContent=0;
-    z=0;
-  }
-}
-function countjsscore(){
-  var x=document.getElementById("js-progress");
-  var p=document.getElementById("jsscore");
-  var z=p.textContent;
-  
-  var i;
-  if(elementInViewport2(x) && z==0){
-    for(i=0;i<72;i++){
-      setTimeout(function() {z++;
-        p.textContent=z;
-      },25*i);
-    }
-  }
-  if(!elementInViewport2(x)){
-    p.textContent=0;
-    z=0;
-  }
-}
-function countcscore(){
-  var x=document.getElementById("c-progress");
-  var p=document.getElementById("cscore");
-  var z=p.textContent;
-  
-  var i;
-  if(elementInViewport2(x) && z==0){
-    for(i=0;i<93;i++){
-      setTimeout(function() {z++;
-        p.textContent=z;
-      },19.35*i);
-    }
-  }
-  if(!elementInViewport2(x)){
-    p.textContent=0;
-    z=0;
-  }
-}
+
 function anifliptel(){
   var x=document.getElementById("fliptel");
   var c1='<div style="padding-top: 60%;"></div>';
@@ -138,76 +86,21 @@ function appearintro2(){
   }
 
 }
-function isactive(){
+function isactive(id,left,right,css){
   
-  var x=document.getElementById("html-progress");
-  var hr=document.getElementById("html-right");
-  var hl=document.getElementById("html-left");
-  if(elementInViewport2(x) && !hr.className.includes("ht") && !hl.className.includes("pt")){
+  var x=document.getElementById(id);
+  var hr=document.getElementById(right);
+  var hl=document.getElementById(left);
+  var cssspace=" "+css;
+  if(elementInViewport2(x) && !hr.className.includes("ht") && !hl.className.includes(css)){
     hr.className=hr.className.replace(" empty"," ht");
-    hl.className+=" pt";
-    
-
-     
+    hl.className+=cssspace;
   }
   if(!elementInViewport2(x)) {
     hr.className=hr.className.replace(" ht"," empty");
-    hl.className=hl.className.replace(" pt","");
-    
+    hl.className=hl.className.replace(cssspace,"");
+    }
 
-
-  }
-  var cssx=document.getElementById("css-progress");
-  var csshr=document.getElementById("css-right");
-  var csshl=document.getElementById("css-left");
-  if(elementInViewport2(cssx) && !csshr.className.includes("ht") && !csshl.className.includes("css-pt")){
-    csshr.className=csshr.className.replace(" empty"," ht");
-    csshl.className+=" css-pt";
-    
-
-     
-  }
-  if(!elementInViewport2(cssx)) {
-    csshr.className=csshr.className.replace(" ht"," empty");
-    csshl.className=csshl.className.replace(" css-pt","");
-    
-
-
-  }
-  var jsx=document.getElementById("js-progress");
-  var jshr=document.getElementById("js-right");
-  var jshl=document.getElementById("js-left");
-  if(elementInViewport2(jsx) && !jshr.className.includes("ht") && !jshl.className.includes("js-pt")){
-    jshr.className=csshr.className.replace(" empty"," ht");
-    jshl.className+=" js-pt";
-    
-
-     
-  }
-  if(!elementInViewport2(jsx)) {
-    jshr.className=jshr.className.replace(" ht"," empty");
-    jshl.className=jshl.className.replace(" js-pt","");
-    
-
-
-  }
-  var cx=document.getElementById("c-progress");
-  var chr=document.getElementById("c-right");
-  var chl=document.getElementById("c-left");
-  if(elementInViewport2(cx) && !chr.className.includes("ht") && !chl.className.includes("c-pt")){
-    chr.className=chr.className.replace(" empty"," ht");
-    chl.className+=" c-pt";
-    
-
-     
-  }
-  if(!elementInViewport2(cx)) {
-    chr.className=chr.className.replace(" ht"," empty");
-    chl.className=chl.className.replace(" c-pt","");
-    
-
-
-  }
 
 }
 function isactiveflipten(){
