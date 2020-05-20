@@ -1,3 +1,75 @@
+function counthtmlscore(){
+  var x=document.getElementById("html-progress");
+  var p=document.getElementById("htmlscore");
+  var z=p.textContent;
+  
+  var i;
+  if(elementInViewport2(x) && z==0){
+    for(i=0;i<89;i++){
+      setTimeout(function() {z++;
+        p.textContent=z;
+      },20.22*i);
+    }
+  }
+  if(!elementInViewport2(x)){
+    p.textContent=0;
+    z=0;
+  }
+}
+function countcssscore(){
+  var x=document.getElementById("css-progress");
+  var p=document.getElementById("cssscore");
+  var z=p.textContent;
+  
+  var i;
+  if(elementInViewport2(x) && z==0){
+    for(i=0;i<76;i++){
+      setTimeout(function() {z++;
+        p.textContent=z;
+      },23.68*i);
+    }
+  }
+  if(!elementInViewport2(x)){
+    p.textContent=0;
+    z=0;
+  }
+}
+function countjsscore(){
+  var x=document.getElementById("js-progress");
+  var p=document.getElementById("jsscore");
+  var z=p.textContent;
+  
+  var i;
+  if(elementInViewport2(x) && z==0){
+    for(i=0;i<72;i++){
+      setTimeout(function() {z++;
+        p.textContent=z;
+      },25*i);
+    }
+  }
+  if(!elementInViewport2(x)){
+    p.textContent=0;
+    z=0;
+  }
+}
+function countcscore(){
+  var x=document.getElementById("c-progress");
+  var p=document.getElementById("cscore");
+  var z=p.textContent;
+  
+  var i;
+  if(elementInViewport2(x) && z==0){
+    for(i=0;i<93;i++){
+      setTimeout(function() {z++;
+        p.textContent=z;
+      },19.35*i);
+    }
+  }
+  if(!elementInViewport2(x)){
+    p.textContent=0;
+    z=0;
+  }
+}
 function anifliptel(){
   var x=document.getElementById("fliptel");
   var c1='<div style="padding-top: 60%;"></div>';
