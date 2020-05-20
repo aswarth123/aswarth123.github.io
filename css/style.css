@@ -81,19 +81,6 @@
     animation-name: fadeInUp;
   }
   
-  @-webkit-keyframes fadeInUpBig {
-    from {
-      opacity: 0;
-      -webkit-transform: translate3d(0, 2000px, 0);
-      transform: translate3d(0, 2000px, 0);
-    }
-  
-    to {
-      opacity: 1;
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-    }
-  }
   .animated {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -145,6 +132,8 @@
     html {
     scroll-behavior: smooth;
   }
+  
+
      .nav-pills > .nav-item > .active{
         background-color:darkorange !important;
         color: white !important;
@@ -258,7 +247,131 @@
         position: absolute;
         top: 0;
       }
+      @keyframes pro-r{
+        from{
+          transform: rotate(0deg);
+          
+        }
+        to{
+          transform: rotate(180deg);
+          
+        }
+      }
+      @keyframes pro-l{
+        from{
+          transform: rotate(0deg);
+        }
+        to{
+          transform: rotate(140.4deg);
+        }
+      }
+      @keyframes css-l{
+        from{
+          transform: rotate(0deg);
+        }
+        to{
+          transform: rotate(93.6deg);
+        }
+      }
+      @keyframes js-l{
+        from{
+          transform: rotate(0deg);
+        }
+        to{
+          transform: rotate(79.2deg);
+        }
+      }
+      @keyframes c-l{
+        from{
+          transform: rotate(0deg);
+        }
+        to{
+          transform: rotate(154.8deg);
+        }
+      }
+      @keyframes ten-l{
+        from{
+          transform: rotate(0deg);
+        }
+        to{
+          transform: rotate(165.6deg);
+        }
+      }
+
+      @keyframes tel-l{
+        from{
+          transform: rotate(0deg);
+        }
+        to{
+          transform: rotate(122.4deg);
+        }
+      }
+      @keyframes bet-l{
+        from{
+          transform: rotate(0deg);
+        }
+        to{
+          transform: rotate(158.76deg);
+        }
+      }
+
+      .htgr{
+        animation: pro-r 1s;
+        animation-fill-mode: both;
+        animation-delay: 0.6s;
+
+      }
       
+      .ht{
+        animation: pro-r 1s;
+        animation-fill-mode: both;
+        
+      }
+      .pt{
+        animation: pro-l 1s;
+        animation-fill-mode: both;
+        animation-delay: 1s;
+      }
+      .css-pt{
+        animation: css-l 1s;
+        animation-fill-mode: both;
+        animation-delay: 1s;
+
+      }
+      .js-pt{
+        animation: js-l 1s;
+        animation-fill-mode: both;
+        animation-delay: 1s;
+      }
+      .c-pt{
+        animation: c-l 1s;
+        animation-fill-mode: both;
+        animation-delay: 1s;
+      }
+      .ten-pt{
+        animation: ten-l 1s;
+        animation-fill-mode: both;
+        animation-delay: 1.6s;
+        
+      }
+      .tel-pt{
+        animation: tel-l 1s;
+        animation-fill-mode: both;
+        animation-delay: 1.6s;
+
+      }
+      .bet-pt{
+        animation: bet-l 1s;
+        animation-fill-mode: both;
+        animation-delay: 1.6s;
+
+      }
+      .empty{
+        color:whitesmoke !important;
+      }
+      .empty-flip{
+        border-color: whitesmoke !important;
+      }
       .progress .progress-left .progress-bar {
         left: 100%;
         border-top-right-radius: 80px;
@@ -266,6 +379,8 @@
         border-left: 0;
         -webkit-transform-origin: center left;
         transform-origin: center left;
+        
+      
       }
       
       .progress .progress-right {
@@ -279,8 +394,13 @@
         border-right: 0;
         -webkit-transform-origin: center right;
         transform-origin: center right;
+        transform: rotate(180deg);
+        
+        
       }
       
+
+
       .progress .progress-value {
         position: absolute;
         top: 0;
