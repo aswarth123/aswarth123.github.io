@@ -13,13 +13,13 @@
 
 
 
-<link rel="stylesheet" href="css/style.css">
-<script src="js/script.js"></script>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
 
 
 
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="20" onmouseover="isactive();appearintro1();appearintro2();anifliptel();aniflipten();aniflipbet();">
+<body data-spy="scroll" data-target=".navbar" data-offset="20" onmouseover="isactive();appearintro1();appearintro2();anifliptel();aniflipten();aniflipbet();counthtmlscore();countcssscore();countjsscore();countcscore();">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
           <div class="navbar-brand" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -148,7 +148,7 @@
                                 <span class="progress-bar empty" id="html-right" style="color: darkorange;"></span>
                   </span>
                   <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                    <div class="h2 font-weight-bold" style="  color: rgb(88, 88, 88);">89</div>
+                    <div class="h2 font-weight-bold" id="htmlscore" style="color: rgb(88, 88, 88);">0</div>
                   </div>
                 </div>
                 <div class="row text-center mt-4">
@@ -172,7 +172,7 @@
                                 <span class="progress-bar empty" id="css-right" style="color: #0275d8;"></span>
                   </span>
                   <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                    <div class="h2 font-weight-bold"  style="color: rgb(88, 88, 88);"> 76</div>
+                    <div class="h2 font-weight-bold"  id="cssscore"style="color: rgb(88, 88, 88);">0</div>
                   </div>
                 </div>
                 <div class="row text-center mt-4">
@@ -195,7 +195,7 @@
                                 <span class="progress-bar empty" id="js-right" style="color: #e0e420ee;;"></span>
                   </span>
                   <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                    <div class="h2 font-weight-bold" style="color: rgb(88, 88, 88);">72</div>
+                    <div class="h2 font-weight-bold" id="jsscore" style="color: rgb(88, 88, 88);">0</div>
                   </div>
                 </div>
               
@@ -222,7 +222,7 @@
                                 <span class="progress-bar empty" id="c-right" style="color: blueviolet;"></span>
                   </span>
                   <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                    <div class="h2 font-weight-bold" style="padding-left: 10px; color:rgb(88, 88, 88);">93</div>
+                    <div class="h2 font-weight-bold" id="cscore" style="padding-left: 10px; color:rgb(88, 88, 88);">0</div>
                   </div>
                 </div>
                 <div class="row text-center mt-2">
