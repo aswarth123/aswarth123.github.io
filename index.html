@@ -19,7 +19,7 @@
 
 
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<body data-spy="scroll" data-target=".navbar" data-offset="20" onmouseover="isactive();appearintro1();appearintro2();anifliptel();aniflipten();aniflipbet();">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
           <div class="navbar-brand" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -121,36 +121,13 @@
      
       <section class="py-5" id="aboutme" >
         
-        <div class="container "  >  
-          <h3 class="display-4 " style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); text-align: center; padding-top: 2%;">ABOUT <span class="f">ME</span></h3>
-        <div class="row" >
-          
-          <div class="col-lg-4 col-md-6 col-sm-6"  style="padding-top: 5%;">
-            
-            <img src="coimg.jpg" class="rounded-circle mx-auto d-block animated fadeInLeft" height="100%" width="100%" style="max-height: 400px; max-width: 400px; min-height: 350px; min-width: 320px;">
-            
-          </div>
-          <div class="col-lg-8 col-md-6 col-sm-6 animated fadeInRight">
-            <h1 class="display-4" style="color: rgb(143, 141, 141); padding-right: 98%;"><span class="fa fa-quote-left"></span></h1>
-            <h1 class="display-7" style="padding-top: 50px; padding-left:30px ; padding-right: 20px; text-align: center; color: rgb(143, 141, 141);">I am an avid competitive <span class="f">programmer and web developer.</span></h1>
-            <h1 class="display-4" style="color: orangered; padding-top: 50px; padding-left: 98%;"><span class="fa fa-quote-right"></span></h1>
-          </div>
-          </div>
+        <div class="container" id="intro1">  
+          <h3 class="display-4 " style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); text-align: center; padding-top: 2%;">ABOUT <span class="f">ME</span></h3><div style="padding-top: 50%;"></div>
         </div>
       
         
-        <div class="container" >
-          <div class="row">
-          <div class="col-lg-8 col-md-6 col-sm-6 animated fadeInLeft" style="padding-top: 3%;">
-            <h1 class="display-4" style="color: rgb(143, 141, 141); padding-bottom: 5%;"><span class="fa fa-quote-left"></span></h1>
-            <h1 class="display-7" style=" text-align: center; color: rgb(143, 141, 141);">I am also a stock <span class="f">market enthusiast.</span></h1>
-            <h1 class="display-4" style="color: orangered; padding-top: 5%; padding-left: 96%;"><span class="fa fa-quote-right"></span></h1>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6" style="padding-top: 5%;">
-            <img src="bvsb.jpg" class="rounded-circle mx-auto d-block animated fadeInRight" height="100%" width="100%" style="max-height: 400px; max-width: 400px; min-height: 350px; min-width: 290px;" >
-
-          </div>
-          </div>
+        <div class="container" id="intro2" >
+          <div style="padding-top: 1%;"></div>
         </div>
         <div class="container py-5" id="skills">
           <h3 class="display-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); text-align: center; padding-top: 19px;">SKI<span class="f">LLS</span></h3>
@@ -163,12 +140,12 @@
                     </div>
         
                
-                <div class="progress mx-auto" data-value='89' >
-                  <span class="progress-left">
-                                <span class="progress-bar"  style="color: darkorange;"></span>
+                <div class="progress mx-auto" id="html-progress">
+                  <span class="progress-left" >
+                                <span class="progress-bar" id="html-left" style="color: darkorange;"></span>
                   </span>
                   <span class="progress-right">
-                                <span class="progress-bar" style="color: darkorange;"></span>
+                                <span class="progress-bar empty" id="html-right" style="color: darkorange;"></span>
                   </span>
                   <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
                     <div class="h2 font-weight-bold" style="  color: rgb(88, 88, 88);">89</div>
@@ -187,12 +164,12 @@
                 <img src="css.jpg"  class="mx-auto d-block" height="200px" width="200px" style="padding-bottom: 30px;">
                 </div>
                 <!-- Progress bar 2 -->
-                <div class="progress mx-auto" data-value='76'>
+                <div class="progress mx-auto" id="css-progress">
                   <span class="progress-left">
-                                <span class="progress-bar border-primary"></span>
+                                <span class="progress-bar" id="css-left" style="color: #0275d8;"></span>
                   </span>
                   <span class="progress-right">
-                                <span class="progress-bar border-primary"></span>
+                                <span class="progress-bar empty" id="css-right" style="color: #0275d8;"></span>
                   </span>
                   <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
                     <div class="h2 font-weight-bold"  style="color: rgb(88, 88, 88);"> 76</div>
@@ -210,12 +187,12 @@
                   <img src="js.png" class="mx-auto d-block" height="200px" width="200px" style="padding-bottom: 30px;">
                   </div>
         
-                <div class="progress mx-auto" data-value='72'>
+                <div class="progress mx-auto" id="js-progress">
                   <span class="progress-left">
-                                <span class="progress-bar border-warning"></span>
+                                <span class="progress-bar" id="js-left" style="color: #e0e420ee;"></span>
                   </span>
                   <span class="progress-right">
-                                <span class="progress-bar border-warning"></span>
+                                <span class="progress-bar empty" id="js-right" style="color: #e0e420ee;;"></span>
                   </span>
                   <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
                     <div class="h2 font-weight-bold" style="color: rgb(88, 88, 88);">72</div>
@@ -237,12 +214,12 @@
                   </div>  
         
 
-                <div class="progress mx-auto" data-value='93'>
+                <div class="progress mx-auto" id="c-progress" >
                   <span class="progress-left">
-                                <span class="progress-bar " style="color: blueviolet;"></span>
+                                <span class="progress-bar" id="c-left" style="color: blueviolet;"></span>
                   </span>
                   <span class="progress-right">
-                                <span class="progress-bar " style="color: blueviolet;"></span>
+                                <span class="progress-bar empty" id="c-right" style="color: blueviolet;"></span>
                   </span>
                   <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
                     <div class="h2 font-weight-bold" style="padding-left: 10px; color:rgb(88, 88, 88);">93</div>
@@ -256,143 +233,27 @@
           </div>
         </div>
         <div class="container" id="education">
-          <h3 class="display-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:   rgb(143, 141, 141); text-align: center; padding-top: 69px;">EDUC<span class="f">ATION</span></h3>
+          <h3 class="display-4" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:   rgb(143, 141, 141); text-align: center; padding-top: 69px;">EDUC<span class="f">ATION</span></h3>
           <div class="row" style="padding-top: 40px;">
             <div class="col-lg-4 col-md-6 col-sm-6">
-              <div class="container">
+              <div class="container" id="flipten">
+                <div style="padding-top: 60%;"></div>
                 
                 
-                <div id="element1" class="flip-card animated fadeInRight" style="padding-top: 10px;">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front" style="padding-top: 30px;background-color: white;">
-                      
-                      <img src="schoollogo.png" alt="Somerville Scholl" style="width:300px;height:300px;">
-                      <p class="lead" style="padding-top: 10px ;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); font-size: x-large;">SECONDARY<span class="f"> EDUCATION</span></p>
-                    </div>
-                  <div class="flip-card-back" >
-                    
-                     <h1 class="display-9" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(218, 214, 214); text-align: center; background-color: darkorange; height: 15%; padding-top: 6px;">X<sup>th</sup></h1>
-                      <div class="container" style="padding-top: 50px; text-align: center;" >
-                          
-                        <div class="progress mx-auto" data-value='96'>
-                          <span class="progress-left">
-                                        <span class="progress-bar border-warning" style="border-color: darkorange;"></span>
-                          </span>
-                          <span class="progress-right">
-                                        <span class="progress-bar border-warning " style="border-color: darkorange;"></span>
-                          </span>
-                          <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                            <div class="h2 font-weight-bold" style="color: rgb(88, 88, 88);">9.6</div>
-                          </div>
-                        </div>
-                        <div class="row text-center mt-4">
-                          <div class="col-6 border-right">
-                            <div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2016</div>
-                          </div>
-                          <div class="col-6">
-                            <div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2017</div>
-                          </div>
-                        </div>          
-                        <p class="lead" style="color: rgb(143, 141, 141); font-size: x-small; text-align: right;">grading scale:- CGPA</p>
-                                  
-                             
-                          
-                      </div>    
-                      </div>
-                  
-                  </div>
-                </div>
                 
               </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
-              <div class="container">
-                
-                
-                <div class="flip-card animated fadeInUp" style="padding-top: 10px;">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front" style="padding-top: 30px;background-color: white;">
-                      
-                      <img src="schoollogo.png" alt="Somerville Scholl" style="width:300px;height:300px;">
-                      <p class="lead"style="padding-top: 10px font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141);">HIGHER SECON<span class="f">DARY EDUCATION</span></p>
-                    </div>
-                  <div class="flip-card-back" >
-                    
-                     <h1 class="display-9" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(218, 214, 214); text-align: center; background-color: darkorange; height: 15%; padding-top: 6px;">XII<sup>th</sup></h1>
-                      <div class="container" style="padding-top: 50px; text-align: center;" >
-                          
-                        <div class="progress mx-auto" data-value='84'>
-                          <span class="progress-left">
-                                        <span class="progress-bar border-primary" ></span>
-                          </span>
-                          <span class="progress-right">
-                                        <span class="progress-bar border-primary " ></span>
-                          </span>
-                          <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                            <div class="h2 font-weight-bold" style="color: rgb(88, 88, 88);">84</div>
-                          </div>
-                        </div>
-                        <div class="row text-center mt-4">
-                          <div class="col-6 border-right">
-                            <div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2018</div>
-                          </div>
-                          <div class="col-6">
-                            <div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2019</div>
-                          </div>
-                        </div>          
-                        <p class="lead" style="color: rgb(143, 141, 141); font-size: x-small; text-align: right;">grading scale:- PERCENTAGE</p>
-                                  
-                             
-                          
-                      </div>    
-                      </div>
-                  
-                  </div>
-                </div>
+              <div class="container" id="fliptel">
+                <div style="padding-top: 60%;"></div>
                 
               </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
-              <div class="container">
+              <div class="container" id="flipbet">
+                <div style="padding-top: 60%;"></div>
                 
                 
-                <div class="flip-card animated fadeInLeft" style="padding-top: 10px;">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front" style="padding-top: 30px;background-color: white;">
-                      
-                      <img src="collagelogo.png" alt="Amrita university" style="width:300px;height:300px;">
-                      <p class="lead" style="padding-top: 10px ;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); font-size: x-large;">GRADU<span class="f">ATION</span></p>
-                    </div>
-                  <div class="flip-card-back" >
-                    
-                     <h1 class="display-9" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(218, 214, 214); text-align: center; background-color: darkorange; height: 15%; padding-top: 6px;">Btech CSE</h1>
-                      <div class="container" style="padding-top: 50px; text-align: center;" >
-                          
-                        <div class="progress mx-auto" data-value='94.1'>
-                          <span class="progress-left">
-                                        <span class="progress-bar border-success" ></span>
-                          </span>
-                          <span class="progress-right">
-                                        <span class="progress-bar border-success " ></span>
-                          </span>
-                          <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                            <div class="h2 font-weight-bold" style="color: rgb(88, 88, 88);">9.41</div>
-                          </div>
-                        </div>
-                        <div class="row text-center mt-4">
-                          <div class="col-6 border-right">
-                            <div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2019</div>
-                          </div>
-                          <div class="col-6">
-                            <div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2023</div>
-                          </div>
-                        </div>          
-                        <p class="lead" style="color: rgb(143, 141, 141); font-size: x-small; text-align: right;">grading scale:- CGPA</p>
-                                  
-                             
-                          
-                      </div>    
-                      </div>
                   
                   </div>
                 </div>
@@ -466,7 +327,7 @@
          
         </div>
         <p style="background-color: darkorange; color: white; text-align: center; margin: 0;"> Copyright &copy cvaswarth 2020</p>
-      <script src="js/script.js"></script>
+        <script src="js/script.js"></script>
 </body>
 </html>
 
