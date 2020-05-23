@@ -19,7 +19,7 @@
 
 
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="20" onmouseover="isactive('html-progress','html-left','html-right','pt');isactive('css-progress','css-left','css-right','css-pt');isactive('js-progress','js-left','js-right','js-pt');isactive('c-progress','c-left','c-right','c-pt');appearintro1();appearintro2();anifliptel();aniflipten();aniflipbet();countscore('html-progress','htmlscore',89);countscore('css-progress','cssscore',76);countscore('js-progress','jsscore',72);countscore('c-progress','cscore',93);">
+<body id="main" data-spy="scroll" data-target=".navbar" data-offset="20" onmouseover="isactive('html-progress','html-left','html-right','pt');isactive('css-progress','css-left','css-right','css-pt');isactive('js-progress','js-left','js-right','js-pt');isactive('c-progress','c-left','c-right','c-pt');appearintro1();appearintro2();anifliptel();aniflipten();aniflipbet();countscore('html-progress','htmlscore',89);countscore('css-progress','cssscore',76);countscore('js-progress','jsscore',72);countscore('c-progress','cscore',93);taskprogress('progress1');">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
           <div class="navbar-brand" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -66,6 +66,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#education">Education</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#tasks">My Tasks</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#contact">Contact</a>
@@ -127,7 +130,7 @@
       
         
         <div class="container" id="intro2" >
-          <div style="padding-top: 1%;"></div>
+          <div style="padding-top: 20%;"></div>
         </div>
         <div class="container py-5" id="skills">
           <h3 class="display-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); text-align: center; padding-top: 19px;">SKI<span class="f">LLS</span></h3>
@@ -140,12 +143,12 @@
                     </div>
         
                
-                <div class="progress mx-auto" id="html-progress">
+                <div class="progress1 mx-auto" id="html-progress">
                   <span class="progress-left" >
-                                <span class="progress-bar" id="html-left" style="color: darkorange;"></span>
+                                <span class="progressbar" id="html-left" style="color: darkorange;"></span>
                   </span>
                   <span class="progress-right">
-                                <span class="progress-bar empty" id="html-right" style="color: darkorange;"></span>
+                                <span class="progressbar empty" id="html-right" style="color: darkorange;"></span>
                   </span>
                   <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
                     <div class="h2 font-weight-bold" id="htmlscore" style="color: rgb(88, 88, 88);">0</div>
@@ -164,12 +167,12 @@
                 <img src="css.jpg"  class="mx-auto d-block" height="200px" width="200px" style="padding-bottom: 30px;">
                 </div>
                 <!-- Progress bar 2 -->
-                <div class="progress mx-auto" id="css-progress">
+                <div class="progress1 mx-auto" id="css-progress">
                   <span class="progress-left">
-                                <span class="progress-bar" id="css-left" style="color: #0275d8;"></span>
+                                <span class="progressbar" id="css-left" style="color: #0275d8;"></span>
                   </span>
                   <span class="progress-right">
-                                <span class="progress-bar empty" id="css-right" style="color: #0275d8;"></span>
+                                <span class="progressbar empty" id="css-right" style="color: #0275d8;"></span>
                   </span>
                   <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
                     <div class="h2 font-weight-bold"  id="cssscore"style="color: rgb(88, 88, 88);">0</div>
@@ -187,12 +190,12 @@
                   <img src="js.png" class="mx-auto d-block" height="200px" width="200px" style="padding-bottom: 30px;">
                   </div>
         
-                <div class="progress mx-auto" id="js-progress">
+                <div class="progress1 mx-auto" id="js-progress">
                   <span class="progress-left">
-                                <span class="progress-bar" id="js-left" style="color: #e0e420ee;"></span>
+                                <span class="progressbar" id="js-left" style="color: #e0e420ee;"></span>
                   </span>
                   <span class="progress-right">
-                                <span class="progress-bar empty" id="js-right" style="color: #e0e420ee;;"></span>
+                                <span class="progressbar empty" id="js-right" style="color: #e0e420ee;;"></span>
                   </span>
                   <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
                     <div class="h2 font-weight-bold" id="jsscore" style="color: rgb(88, 88, 88);">0</div>
@@ -214,12 +217,12 @@
                   </div>  
         
 
-                <div class="progress mx-auto" id="c-progress" >
+                <div class="progress1 mx-auto" id="c-progress" >
                   <span class="progress-left">
-                                <span class="progress-bar" id="c-left" style="color: blueviolet;"></span>
+                                <span class="progressbar" id="c-left" style="color: blueviolet;"></span>
                   </span>
                   <span class="progress-right">
-                                <span class="progress-bar empty" id="c-right" style="color: blueviolet;"></span>
+                                <span class="progressbar empty" id="c-right" style="color: blueviolet;"></span>
                   </span>
                   <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
                     <div class="h2 font-weight-bold" id="cscore" style="padding-left: 10px; color:rgb(88, 88, 88);">0</div>
@@ -260,7 +263,160 @@
                 
               </div>
             </div>
-           
+            <div class="container" id="tasks" style="padding-top: 60px;">
+              <h3 class="display-4 " style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); text-align: center; padding-top: 2%;">MY <span class="f">TASKS</span></h3>
+              <!-- Button trigger modal -->
+            <div id="addbtn">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">+ ADD</button>
+            </div>
+            <div id="delbtn">
+              <button type="button" class="btn btn-primary" onclick="addcross();">- DELETE</button>
+            </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" style="font-weight: 600; color: darkorange;font-size: x-large; text-align: center;">NEW TASK</h3> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+        
+          <img class="img-fluid spec" src="taskicon2.png" alt="Card image cap">
+    
+        
+      </div>
+      
+      <div class="container" id="task-form"> 
+        <div class="form-group" style="padding-top: 5%;">
+          <input type="text" id="task-title" class="form-control mt-2" id="mtitle" name="title" placeholder="Task Title" required>
+        </div>
+      <div class="row">
+        
+      <div class="col-4">
+      <label for="sdate" style="text-align: center; font-weight: 600; color: darkorange;font-size: x-large;">Start Date</label>
+      </div>
+      <div class="col-8">
+        <div class="form-group">
+          <input type="date" class="form-control mt-2" name="sdate" id="msdate">
+        </div>
+      </div>
+      <!---<div class="col-4">
+        <label for="stime" style="text-align: center; font-weight: 600; color: darkorange;font-size: x-large;">Start Time</label>
+        </div>
+        <div class="col-8">
+          <div class="form-group">
+            <input type="time" class="form-control mt-2" name="stime">
+          </div>
+        </div>--->
+
+        <div class="col-4">
+          <label for="edate" style="text-align: center; font-weight: 600; color: darkorange;font-size: x-large;">End Date</label>
+          </div>
+          <div class="col-8">
+            <div class="form-group">
+              <input type="date" class="form-control mt-2" name="edate" id="medate">
+            </div>
+          </div>
+          <!---<div class="col-4">
+            <label for="etime" style="text-align: center; font-weight: 600; color: darkorange;font-size: x-large;">End Time</label>
+            </div>
+            <div class="col-8">
+              <div class="form-group">
+                <input type="time" class="form-control mt-2" name="etime">
+              </div>
+            </div>--->
+              <div class="col-12">
+                <div class="form-group">
+                  <textarea class="form-control" id="mtextarea" placeholder="Task Description (max 100 words)" rows="5" required></textarea>
+                </div>
+              </div>
+
+      </div>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary but" data-dismiss="modal" aria-label="Close" onclick="addtask();">ADD</button>
+      </div>
+    </div>
+  </div>
+</div>
+              <div class="container">
+                <h3 class="display-6" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); padding-top: 5%; text-align: center;">UPCO<span class="f">MING...</span></h3>
+                <div class="row" id="upcoming">
+                  <div class="col-12" onmouseenter="addicon('tau1','asdjfhaishdfioashdfioashdfihasidufha');" onmouseleave="removeicon('tau1','asdjfhaishdfioashdfioashdfihasidufha');remdes('taudescrip1','asdjfhaishdfioashdfioashdfihasidufha');" style="padding-top: 30px;" >
+                    
+                    <div class="task-box" id='tau1'>
+                   
+                    <h3 class="task-title">ASSIGNMENT 1</h3>
+                    <div style="padding-top: 20px; padding-left: 10%; padding-bottom: 10px;">
+                    <div class="progress" style="width: 90%;">
+                      <div class="progress-bar" role="progressbar" id="progress1" style="background-color: darkorange !important;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    </div>
+                    <div class="enddate" id="enddate1" style="float: right; padding-right: 5%; color: rgb(143, 141, 141)"><h5>24/05/20</h5></div>
+                    <div class="startdate" id="startdate1" style="padding-left: 6%; color: rgb(143, 141, 141)"><h5>22/05/20</h5></div>
+                    <div id="taudescrip1"></div>
+                  </div>
+                  </div>
+                   <div class="col-12" onmouseenter="addicon('tau2');" onmouseleave="removeicon('tau2');" style="padding-top: 1%;">
+                    <div class="task-box" id='tau2'>
+                      <h3 class="task-title">ASSIGNMENT 2</h3>
+                      <div style="padding-top: 20px; padding-left: 10%; padding-bottom: 10px;">
+                      <div class="progress" style="width: 90%;">
+                        <div class="progress-bar" role="progressbar" style="width: 40%; background-color: darkorange !important;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      </div>
+                      <div class="enddate" style="float: right; padding-right: 5%; color: rgb(143, 141, 141)"><h5>28/05/20</h5></div>
+                      <div class="startdate" style="padding-left: 6%; color: rgb(143, 141, 141)"><h5>22/05/20</h5></div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                
+
+              </div>
+              <div class="container">
+                <h3 class="display-6" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); padding-top: 5%; text-align: center;">CUR<span class="f">RENT</span></h3>
+                <div class="row" id="current">
+                  <div class="col-12" onmouseenter="addicon('tau3');" onmouseleave="removeicon('tau3');" style="padding-top: 30px;">
+                    <div class="task-box" id="tau3">
+                      
+                    <h3 class="task-title">ASSIGNMENT 1</h3>
+                    <div style="padding-top: 20px; padding-left: 10%; padding-bottom: 10px;">
+                    <div class="progress" style="width: 90%;">
+                      <div class="progress-bar" role="progressbar" style="width: 40%; background-color: darkorange !important;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    </div>
+                    <div class="enddate" style="float: right; padding-right: 5%; color: rgb(143, 141, 141)"><h5>28/05/20</h5></div>
+                    <div class="startdate" style="padding-left: 6%; color: rgb(143, 141, 141)"><h5>22/05/20</h5></div>
+                  </div>
+                  </div>
+
+                   <div class="col-12" onmouseenter="addicon('tau4');" onmouseleave="removeicon('tau4');" style="padding-top: 1%;">
+                    <div class="task-box" id='tau4'>
+                      <h3 class="task-title">ASSIGNMENT 2</h3>
+                      <div style="padding-top: 20px; padding-left: 10%; padding-bottom: 10px;">
+                      <div class="progress" style="width: 90%;">
+                        <div class="progress-bar" role="progressbar" style="width: 40%; background-color: darkorange !important;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      </div>
+                      <div class="enddate" style="float: right; padding-right: 5%; color: rgb(143, 141, 141)"><h5>28/05/20</h5></div>
+                      <div class="startdate" style="padding-left: 6%; color: rgb(143, 141, 141)"><h5>22/05/20</h5></div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              
+            </div>
               
               <div class="container-fluid mx-auto d-block" id="contact">
                 <h3 class="display-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:   rgb(143, 141, 141); text-align: center; padding-top: 110px;">CONTACT<span class="f"> ME</span></h3>
@@ -301,7 +457,7 @@
                             </div>
                             
                             <div class="col-12" style="padding-top: 20px;">
-                              <button class="btn btn-light btn-block bch"  type="submit">Send</button>
+                              <button class="btn btn-light btn-block bch" style="width: 100%" type="submit">Send</button>
                             </div>
                           </div>
                         </form>
