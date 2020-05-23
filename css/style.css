@@ -1,3 +1,4 @@
+
 @-webkit-keyframes fadeInRight {
     from {
       opacity: 0;
@@ -207,14 +208,14 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         text-align: center;
       }
-      .progress {
+      .progress1 {
         width: 150px;
         height: 150px;
         background: none;
         position: relative;
       }
       
-      .progress::after {
+      .progress1::after {
         content: "";
         width: 100%;
         height: 100%;
@@ -225,7 +226,7 @@
         left: 0;
       }
       
-      .progress>span {
+      .progress1>span {
         width: 50%;
         height: 100%;
         overflow: hidden;
@@ -234,11 +235,11 @@
         z-index: 1;
       }
       
-      .progress .progress-left {
+      .progress1 .progress-left {
         left: 0;
       }
       
-      .progress .progress-bar {
+      .progress1 .progressbar {
         width: 100%;
         height: 100%;
         background: none;
@@ -372,7 +373,7 @@
       .empty-flip{
         border-color: whitesmoke !important;
       }
-      .progress .progress-left .progress-bar {
+      .progress1 .progress-left .progressbar {
         left: 100%;
         border-top-right-radius: 80px;
         border-bottom-right-radius: 80px;
@@ -383,11 +384,11 @@
       
       }
       
-      .progress .progress-right {
+      .progress1 .progress-right {
         right: 0;
       }
       
-      .progress .progress-right .progress-bar {
+      .progress1 .progress-right .progressbar {
         left: -100%;
         border-top-left-radius: 80px;
         border-bottom-left-radius: 80px;
@@ -401,7 +402,7 @@
       
 
 
-      .progress .progress-value {
+      .progress1 .progress-value {
         position: absolute;
         top: 0;
         left: 0;
@@ -432,14 +433,7 @@
         color: #fff;
         text-decoration: none;
       }
-      
-      
-      
-      
-      
-      
-      
-      #author a{
+       #author a{
         color: #fff;
         text-decoration: none;
           
@@ -484,6 +478,82 @@
         
         border:  2px solid #fff;
       }
+      #task-title{
+        width: 100%;
+        text-align: center;
+        
+    }
+    #task-form .row input{
+      text-align: center;
+
+    }
+    #addbtn{
+      float: right;
+    }
+    textarea{
+      resize: none;
+    }
+    .task-box{
+      box-sizing: border-box;
+      border: 3px solid darkorange;
+      width: 100%;
+      transition: transform 0.2s;
+      
+    }
+    .task-box:hover{
+      transform: scale(1.03);
+      cursor: pointer;
+    }
+    .fa-bars, .fa-times{
+      color: rgb(143, 141, 141) !important;
+    }
+    .fa-bars:hover, .fa-times:hover{
+      color: black !important;
+    }
+    .task-title{
+      text-align: center;
+      margin: 10px;
+      color: darkorange;
+    }
+    .btn{
+      background-color: darkorange !important;
+      border-color: darkorange !important;
+      width: 150px;
+      font-weight: 700;
+      
+    }
+    .btn:hover{
+      background-color: white !important ;
+      border-color: darkorange !important;
+      color: darkorange !important;
+    }
+
+    #exampleModalCenterTitle{
+        text-align: center !important;
+    }
+    .spec{
+       padding-left: 30% !important;
+       height: 200px !important;
+       overflow: hidden !important;
+       background-position: center !important;
+       background-repeat: no-repeat !important;
+       background-size: cover !important;
+       
+    }
+   
+   .but{
+     background-color: darkorange !important;
+     border-color: white !important;
+     width: 100%;
+     text-align: center;
+
+
+   }
+   .but:hover{
+     color: darkorange !important;
+     background-color: white !important;
+     border-color: darkorange !important;
+   }
       .profile-card-2 .card-img-block{
         
           width: 100%;
