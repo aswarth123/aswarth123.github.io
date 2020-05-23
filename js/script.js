@@ -1,3 +1,145 @@
+var taskno=5;
+var taskname='tau';
+function addtask(){
+
+  var ed=document.getElementById("medate").value;
+  var edate=ed[8]+ed[9]+"/"+ed[5]+ed[6]+"/"+ed[2]+ed[3];
+  var sd=document.getElementById("msdate").value;
+  var sdate=sd[8]+sd[9]+"/"+sd[5]+sd[6]+"/"+sd[2]+sd[3];
+  var title=document.getElementById("task-title").value;
+  var taskdes=document.getElementById("mtextarea").value;
+  if(edate==null || sdate==null || title==null){
+    alert("Some mandatory fields are missing");
+    document.getElementById("medate").value=null;
+    document.getElementById("msdate").value=null;
+    document.getElementById("mtextarea").value=null;
+    document.getElementById("task-title").value=null;
+  }
+  if(datedifference(sdate,edate)<0){
+    alert("invalid start date and end date");
+    nullfields();
+  }
+  else{
+    if(datecomparison(sdate)>0){
+      var task=document.getElementById("current");
+      nullfields();
+    }
+    else{
+      var task=document.getElementById("upcoming");
+    }
+    var task1='<div class="col-12" onmouseenter="addicon('+"'"+taskname+taskno+"'"+','+"'"+taskdes+"'"+');" onmouseleave="removeicon('+"'"+taskname+taskno+"'"+','+"'"+taskdes+"'"+');remdes('+"'"+taskname+taskno+"'"+','+"'"+taskdes+"'"+');" style="padding-top: 1%;" ><div class="task-box" id='+"'"+taskname+taskno+"'"+'><h3 class="task-title">'+title+'</h3><div style="padding-top: 20px; padding-left: 10%; padding-bottom: 10px;"><div class="progress" style="width: 90%;"><div class="progress-bar" role="progressbar" id="progress'+taskno+'" style="background-color: darkorange !important; width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div></div></div><div class="enddate" id="enddate'+taskno+'" style="float: right; padding-right: 5%; color: rgb(143, 141, 141)"><h5>'+edate+'</h5></div><div class="startdate" id="startdate'+taskno+'" style="padding-left: 6%; color: rgb(143, 141, 141)"><h5>'+sdate+'</h5></div><div id='+"'"+"taudescrip"+taskno+"'"+'></div></div></div>';
+    task.innerHTML+=task1;
+    
+    var pro='progress'+taskno;
+    window.addEventListener("mouseover", function() {taskprogress(pro);})
+    nullfields();
+    taskno+=1;
+  }
+}
+function nullfields(){
+  document.getElementById("medate").value=null;
+    document.getElementById("msdate").value=null;
+    document.getElementById("mtextarea").value=null;
+    document.getElementById("task-title").value=null;
+}
+function addcross(){
+  var task=document.getElementsByClassName("task-box");
+  var app;
+  for(i=0;i<task.length;i++){
+    app='<div onclick="removeid('+"'"+task[i].id+"'"+')" style="float: right; margin: 10px"><i class="fa fa-times" aria-hidden="true"></i></div>'
+    if(task[i].innerHTML.includes(app)){
+      task[i].innerHTML=task[i].innerHTML.replace(app,"");
+    }
+    else{
+    app+=task[i].innerHTML;
+    task[i].innerHTML=app;
+  }
+  }
+}
+function removeid(id){
+  document.getElementById(id).remove();
+}
+function taskprogress(id){
+  var par=document.getElementById(id);
+  
+  var edate=document.getElementById('enddate'+id[id.length-1]).textContent;
+  var sdate=document.getElementById('startdate'+id[id.length-1]).textContent;
+  var total=datedifference(sdate,edate);
+  var comp=datecomparison(sdate);
+  
+  var percent=(comp/total)*100;
+  if(percent<0){
+    percent=0;
+  }
+  par.style.width=percent.toString()+'%';
+  if(percent<50){
+    par.style.backgroundColor='darkorange';
+  }
+  if(percent>=50 && percent<75){
+    par.style.backgroundColor='#e0e420ee';
+  }
+  if(percent>=75){
+    par.style.backgroundColor='red';
+  }
+  
+
+}
+function datecomparison(sdate){
+  var today=new Date();
+  var start=[parseInt(sdate[0]+sdate[1]),parseInt(sdate[3]+sdate[4]),parseInt('20'+sdate[6]+sdate[7])];
+  var comp=((12*(today.getFullYear()-start[2])+today.getMonth()+1-start[1]))*30+today.getDate()-start[0];
+  return(comp);
+
+}
+function datedifference(sdate,edate){
+   var start=[parseInt(sdate[0]+sdate[1]),parseInt(sdate[3]+sdate[4]),parseInt('20'+sdate[6]+sdate[7])];
+  var end=[parseInt(edate[0]+edate[1]),parseInt(edate[3]+edate[4]),parseInt('20'+edate[6]+edate[7])];
+  
+  var difference=((12*(end[2]-start[2])+end[1]-start[1]))*30+end[0]-start[0];
+  return(difference);
+}
+function addremdes(id,des){
+  var x=document.getElementById(id);
+  var p='<p class="text-justify" style="margin: 20px 60px 20px 60px; color: darkorange; font-weight: 600;">'+des+'</p>';
+  if(x.innerHTML.includes(p)){
+      x.innerHTML=x.innerHTML.replace(p,"");
+      
+    }
+    else{
+      x.innerHTML+=p;
+    }
+}
+function remdes(id,des){
+  var x=document.getElementById(id);
+  var p='<p class="text-justify" style="margin: 20px 60px 20px 60px; color: darkorange; font-weight: 600;">'+des+'</p>';
+  if(x.innerHTML.includes(p)){
+      x.innerHTML=x.innerHTML.replace(p,"");
+      
+    }
+
+}
+function addicon(id,des){
+  var par=document.getElementById(id);
+  
+  var cross='<div onclick="removeid('+"'"+id+"'"+')" style="float: right; margin: 10px"><i class="fa fa-times" aria-hidden="true"></i></div>'
+  var app='<div onclick="addremdes('+"'"+"taudescrip"+id[id.length-1]+"'"+','+"'"+des+"'"+')" style="float:right; padding-right: 10px;"><i class="fa fa-bars" aria-hidden="true"></i></div>';
+  if(!par.innerHTML.includes(app) && !par.innerHTML.includes(cross)){
+    
+    app+=par.innerHTML;
+    par.innerHTML=app;
+  }
+
+}
+function removeicon(id,des){
+  var par=document.getElementById(id);
+  
+  var app='<div onclick="addremdes('+"'"+"taudescrip"+id[id.length-1]+"'"+','+"'"+des+"'"+')" style="float:right; padding-right: 10px;"><i class="fa fa-bars" aria-hidden="true"></i></div>';
+  if(par.innerHTML.includes(app)){
+    par.innerHTML=par.innerHTML.replace(app,"");
+  }
+
+}
+
 function countscore(id,score,no){
   var x=document.getElementById(id);
   var p=document.getElementById(score);
@@ -21,7 +163,7 @@ function countscore(id,score,no){
 function anifliptel(){
   var x=document.getElementById("fliptel");
   var c1='<div style="padding-top: 60%;"></div>';
-  var par='<div class="flip-card animated fadeInUp" style="padding-top: 10px;" onmouseover="isactivefliptel();" onmouseout="isnotactivefliptel();"><div class="flip-card-inner"><div class="flip-card-front" style="padding-top: 30px;background-color: white;"><img src="schoollogo.png" alt="Somerville Scholl" style="width:300px;height:300px;"><p class="lead"style="padding-top: 10px font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141);">HIGHER SECON<span class="f">DARY EDUCATION</span></p></div><div class="flip-card-back" ><h1 class="display-9" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(218, 214, 214); text-align: center; background-color: darkorange; height: 15%; padding-top: 6px;">XII<sup>th</sup></h1><div class="container" style="padding-top: 50px; text-align: center;" ><div class="progress mx-auto"><span class="progress-left"><span class="progress-bar" id="tel-left" style="border-color: #0275d8;" ></span></span><span class="progress-right"><span class="progress-bar empty-flip" id="tel-right" style="border-color: #0275d8;"></span></span><div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center"><div class="h2 font-weight-bold" style="color: rgb(88, 88, 88);">84</div></div></div><div class="row text-center mt-4"><div class="col-6 border-right"><div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2018</div></div><div class="col-6"><div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2019</div></div></div><p class="lead" style="color: rgb(143, 141, 141); font-size: x-small; text-align: right;">grading scale:- PERCENTAGE</p></div></div></div></div>';
+  var par='<div class="flip-card animated fadeInUp" style="padding-top: 10px;" onmouseover="isactiveflip('+ "'tel-left'," +"'tel-right',"+"'tel-pt'"+');" onmouseout="isnotactiveflip('+ "'tel-left'," +"'tel-right',"+"'tel-pt'"+');"><div class="flip-card-inner"><div class="flip-card-front" style="padding-top: 30px;background-color: white;"><img src="schoollogo.png" alt="Somerville Scholl" style="width:300px;height:300px;"><p class="lead"style="padding-top: 10px font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141);">HIGHER SECON<span class="f">DARY EDUCATION</span></p></div><div class="flip-card-back" ><h1 class="display-9" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(218, 214, 214); text-align: center; background-color: darkorange; height: 15%; padding-top: 6px;">XII<sup>th</sup></h1><div class="container" style="padding-top: 50px; text-align: center;" ><div class="progress1 mx-auto"><span class="progress-left"><span class="progressbar" id="tel-left" style="border-color: #0275d8;" ></span></span><span class="progress-right"><span class="progressbar empty-flip" id="tel-right" style="border-color: #0275d8;"></span></span><div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center"><div class="h2 font-weight-bold" style="color: rgb(88, 88, 88);">84</div></div></div><div class="row text-center mt-4"><div class="col-6 border-right"><div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2018</div></div><div class="col-6"><div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2019</div></div></div><p class="lead" style="color: rgb(143, 141, 141); font-size: x-small; text-align: right;">grading scale:- PERCENTAGE</p></div></div></div></div>';
     
   if(elementInViewport2(x) && x.innerHTML==c1){
     x.innerHTML=par;
@@ -33,7 +175,7 @@ function anifliptel(){
 function aniflipten(){
   var x=document.getElementById("flipten");
   var c1='<div style="padding-top: 60%;"></div>';
-  var par='<div class="flip-card animated fadeInUp" style="padding-top: 10px;" onmouseover="isactiveflipten();" onmouseout="isnotactiveflipten();"><div class="flip-card-inner"><div class="flip-card-front" style="padding-top: 30px;background-color: white;"><img src="schoollogo.png" alt="Somerville Scholl" style="width:300px;height:300px;"><p class="lead" style="padding-top: 10px ;font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); font-size: x-large;">SECONDARY<span class="f"> EDUCATION</span></p></div><div class="flip-card-back" ><h1 class="display-9" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(218, 214, 214); text-align: center; background-color: darkorange; height: 15%; padding-top: 6px;">X<sup>th</sup></h1><div class="container" style="padding-top: 50px; text-align: center;" ><div class="progress mx-auto"><span class="progress-left"><span class="progress-bar" id="ten-left" style="border-color: darkorange;"></span></span><span class="progress-right empty"><span class="progress-bar empty-flip" id="ten-right" style="border-color: darkorange;"></span></span><div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center"><div class="h2 font-weight-bold" style="color: rgb(88, 88, 88);">9.6</div></div></div><div class="row text-center mt-4"><div class="col-6 border-right"><div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2016</div></div><div class="col-6"><div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2017</div></div></div><p class="lead" style="color: rgb(143, 141, 141); font-size: x-small; text-align: right;">grading scale:- CGPA</p></div></div></div></div>';
+  var par='<div class="flip-card animated fadeInUp" style="padding-top: 10px;" onmouseover="isactiveflip('+ "'ten-left'," +"'ten-right',"+"'ten-pt'"+');" onmouseout="isnotactiveflip('+ "'ten-left'," +"'ten-right',"+"'ten-pt'"+');"><div class="flip-card-inner"><div class="flip-card-front" style="padding-top: 30px;background-color: white;"><img src="schoollogo.png" alt="Somerville Scholl" style="width:300px;height:300px;"><p class="lead" style="padding-top: 10px ;font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); font-size: x-large;">SECONDARY<span class="f"> EDUCATION</span></p></div><div class="flip-card-back" ><h1 class="display-9" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(218, 214, 214); text-align: center; background-color: darkorange; height: 15%; padding-top: 6px;">X<sup>th</sup></h1><div class="container" style="padding-top: 50px; text-align: center;" ><div class="progress1 mx-auto"><span class="progress-left"><span class="progressbar" id="ten-left" style="border-color: darkorange;"></span></span><span class="progress-right empty"><span class="progressbar empty-flip" id="ten-right" style="border-color: darkorange;"></span></span><div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center"><div class="h2 font-weight-bold" style="color: rgb(88, 88, 88);">9.6</div></div></div><div class="row text-center mt-4"><div class="col-6 border-right"><div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2016</div></div><div class="col-6"><div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2017</div></div></div><p class="lead" style="color: rgb(143, 141, 141); font-size: x-small; text-align: right;">grading scale:- CGPA</p></div></div></div></div>';
     
   if(elementInViewport2(x) && x.innerHTML==c1){
    x.innerHTML=par;
@@ -46,7 +188,7 @@ function aniflipten(){
 function aniflipbet(){
   var x=document.getElementById("flipbet");
   var c1='<div style="padding-top: 60%;"></div>';
-  var par='<div class="flip-card animated fadeInUp" style="padding-top: 10px;"  onmouseover="isactiveflipbet();" onmouseout="isnotactiveflipbet();"><div class="flip-card-inner"><div class="flip-card-front" style="padding-top: 30px;background-color: white;"><img src="collagelogo.png" alt="Amrita university" style="width:300px;height:300px;"><p class="lead" style="padding-top: 10px ;font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); font-size: x-large;">GRADU<span class="f">ATION</span></p></div><div class="flip-card-back" ><h1 class="display-9" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(218, 214, 214); text-align: center; background-color: darkorange; height: 15%; padding-top: 6px;">Btech CSE</h1><div class="container" style="padding-top: 50px; text-align: center;" ><div class="progress mx-auto"><span class="progress-left"><span class="progress-bar" id="bet-left" style="border-color: #5cb85c;" ></span></span><span class="progress-right"><span class="progress-bar empty-flip" id="bet-right" style="border-color: #5cb85c;"></span></span><div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center"><div class="h2 font-weight-bold" style="color: rgb(88, 88, 88);">9.41</div></div></div><div class="row text-center mt-4"><div class="col-6 border-right"><div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2019</div></div><div class="col-6"><div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2023</div></div></div><p class="lead" style="color: rgb(143, 141, 141); font-size: x-small; text-align: right;">grading scale:- CGPA</p></div></div>';
+  var par='<div class="flip-card animated fadeInUp" style="padding-top: 10px;"  onmouseover="isactiveflip('+ "'bet-left'," +"'bet-right',"+"'bet-pt'"+');" onmouseout="isnotactiveflip('+ "'bet-left'," +"'bet-right',"+"'bet-pt'"+');"><div class="flip-card-inner"><div class="flip-card-front" style="padding-top: 30px;background-color: white;"><img src="collagelogo.png" alt="Amrita university" style="width:300px;height:300px;"><p class="lead" style="padding-top: 10px ;font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); font-size: x-large;">GRADU<span class="f">ATION</span></p></div><div class="flip-card-back" ><h1 class="display-9" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(218, 214, 214); text-align: center; background-color: darkorange; height: 15%; padding-top: 6px;">Btech CSE</h1><div class="container" style="padding-top: 50px; text-align: center;" ><div class="progress1 mx-auto"><span class="progress-left"><span class="progressbar" id="bet-left" style="border-color: #5cb85c;" ></span></span><span class="progress-right"><span class="progressbar empty-flip" id="bet-right" style="border-color: #5cb85c;"></span></span><div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center"><div class="h2 font-weight-bold" style="color: rgb(88, 88, 88);">9.41</div></div></div><div class="row text-center mt-4"><div class="col-6 border-right"><div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2019</div></div><div class="col-6"><div class="h4 font-weight-bold mb-0" style="color: rgb(143, 141, 141);">2023</div></div></div><p class="lead" style="color: rgb(143, 141, 141); font-size: x-small; text-align: right;">grading scale:- CGPA</p></div></div>';
   if(elementInViewport2(x) && x.innerHTML==c1){
    x.innerHTML=par;
 }
@@ -74,7 +216,7 @@ function appearintro1(){
 function appearintro2(){
   var x=document.getElementById("intro2");
   var par=x.innerHTML;
-  var c2='<div style="padding-top: 1%;"></div>';
+  var c2='<div style="padding-top: 20%;"></div>';
   
   if(elementInViewport2(x) && x.innerHTML==c2){
     var p='<div class="row"><div class="col-lg-8 col-md-6 col-sm-6 animated fadeInLeft" style="padding-top: 3%;"><h1 class="display-4" style="color: rgb(143, 141, 141); padding-bottom: 5%;"><span class="fa fa-quote-left"></span></h1><h1 class="display-7" style=" text-align: center; color: rgb(143, 141, 141);">I am also a stock <span class="f">market enthusiast.</span></h1><h1 class="display-4" style="color: orangered; padding-top: 5%; padding-left: 96%;"><span class="fa fa-quote-right"></span></h1></div><div class="col-lg-4 col-md-6 col-sm-6" style="padding-top: 5%;"><img src="bvsb.jpg" class="rounded-circle mx-auto d-block animated fadeInRight" height="100%" width="100%" style="max-height: 400px; max-width: 400px; min-height: 350px; min-width: 290px;" ></div></div>';
@@ -103,72 +245,31 @@ function isactive(id,left,right,css){
 
 
 }
-function isactiveflipten(){
-  var tenleft=document.getElementById("ten-left");
-  var tenright=document.getElementById("ten-right");
+function isactiveflip(left,right,css){
+  var tenleft=document.getElementById(left);
+  var tenright=document.getElementById(right);
+  var cssspace=" "+css;
   if(tenright.className.includes("empty-flip")){
     tenright.className=tenright.className.replace(" empty-flip"," htgr");
   }
-  if(!tenleft.className.includes("ten-pt")){
-    tenleft.className+=" ten-pt";
+  if(!tenleft.className.includes(css)){
+    tenleft.className+=cssspace;
   }
 
 }
-function isnotactiveflipten(){
-  var tenleft=document.getElementById("ten-left");
-  var tenright=document.getElementById("ten-right");
+function isnotactiveflip(left,right,css){
+  var tenleft=document.getElementById(left);
+  var tenright=document.getElementById(right);
+  var cssspace=" "+css;
   if(tenright.className.includes("htgr")){
     tenright.className=tenright.className.replace(" htgr"," empty-flip");
   }
-  if(tenleft.className.includes("ten-pt")){
-    tenleft.className=tenleft.className.replace(" ten-pt","");
+  if(tenleft.className.includes(cssspace)){
+    tenleft.className=tenleft.className.replace(cssspace,"");
   }
 
 }
-function isactivefliptel(){
-  var telleft=document.getElementById("tel-left");
-  var telright=document.getElementById("tel-right");
-  if(telright.className.includes("empty-flip")){
-    telright.className=telright.className.replace(" empty-flip"," htgr");
-  }
-  if(!telleft.className.includes("tel-pt")){
-    telleft.className+=" tel-pt";
-  }
 
-}
-function isnotactivefliptel(){
-  var telleft=document.getElementById("tel-left");
-  var telright=document.getElementById("tel-right");
-  if(telright.className.includes("htgr")){
-    telright.className=telright.className.replace(" htgr"," empty-flip");
-  }
-  if(telleft.className.includes("tel-pt")){
-    telleft.className=telleft.className.replace(" tel-pt","");
-  }
-
-}
-function isactiveflipbet(){
-  var betleft=document.getElementById("bet-left");
-  var betright=document.getElementById("bet-right");
-  if(betright.className.includes("empty-flip")){
-    betright.className=betright.className.replace(" empty-flip"," htgr");
-  }
-  if(!betleft.className.includes("bet-pt")){
-    betleft.className+=" bet-pt";
-  }
-
-}
-function isnotactiveflipbet(){
-  var betleft=document.getElementById("bet-left");
-  var betright=document.getElementById("bet-right");
-  if(betright.className.includes("htgr")){
-    betright.className=betright.className.replace(" htgr"," empty-flip");
-  }
-  if(betleft.className.includes("bet-pt")){
-    betleft.className=betleft.className.replace(" bet-pt","");
-  }
-
-}
 
 function elementInViewport2(el) {
   var top = el.offsetTop;
