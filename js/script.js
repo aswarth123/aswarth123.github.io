@@ -1,5 +1,19 @@
 var taskno=5;
 var taskname='tau';
+// function notask(){
+//   var x=document.getElementById("upcoming");
+//   console.log(x.innerHTML)
+//   // var px='<h3 class="display-6" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); padding-top: 5%; text-align: center;">UPCO<span class="f">MING...</span></h3>';
+//   var y=document.getElementById("current");
+//   // var py='<h3 class="display-6" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); padding-top: 5%; text-align: center;">CUR<span class="f">RENT</span></h3>';
+//   if(x.innerHTML==null){
+//     document.getElementById("upcomingcont").innerHTML=document.getElementById("upcomingcont").innerHTML.replace(px,"");
+//   }
+//   if(y.innerHTML==null){
+//     document.getElementById("currentcont").innerHTML=document.getElementById("currentcont").innerHTML.replace(py,"");
+//   }
+
+// }
 function addtask(){
 
   var ed=document.getElementById("medate").value;
@@ -17,6 +31,10 @@ function addtask(){
   }
   if(datedifference(sdate,edate)<0){
     alert("invalid start date and end date");
+    nullfields();
+  }
+  if(datecomparison(edate)>0){
+    alert("The task is already completed");
     nullfields();
   }
   else{
