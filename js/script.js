@@ -1,19 +1,46 @@
 var taskno=5;
 var taskname='tau';
-// function notask(){
-//   var x=document.getElementById("upcoming");
-//   console.log(x.innerHTML)
-//   // var px='<h3 class="display-6" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); padding-top: 5%; text-align: center;">UPCO<span class="f">MING...</span></h3>';
-//   var y=document.getElementById("current");
-//   // var py='<h3 class="display-6" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); padding-top: 5%; text-align: center;">CUR<span class="f">RENT</span></h3>';
-//   if(x.innerHTML==null){
-//     document.getElementById("upcomingcont").innerHTML=document.getElementById("upcomingcont").innerHTML.replace(px,"");
-//   }
-//   if(y.innerHTML==null){
-//     document.getElementById("currentcont").innerHTML=document.getElementById("currentcont").innerHTML.replace(py,"");
-//   }
+function remove_title(){
+  var upcontent=document.getElementById("upcomingcont");
+  var upcom =document.getElementsByClassName("task-upcoming").length;
+  var curcontent=document.getElementById("currentcont");
+  var curcom =document.getElementsByClassName("task-current").length;
+  var upco=document.getElementById("upcoming");
+  var task='<div class="col-12" id="notask"><img src="tasks.jpeg" style="padding-top:5%; padding-left: 40%;"><h1 class="text-center" style="padding-top:2%; color: darkorange;"># NO TASKS LEFT</h1></div>';
+  
+  
+  var uptitle='<h3 class="display-6" id="upcoming-title" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); padding-top: 5%; text-align: center;">UPCO<span class="f">MING...</span></h3>';
+  var curtitle='<h3 class="display-6" id="current-title" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); padding-top: 5%; text-align: center;">CUR<span class="f">RENT</span></h3>';
+  console.log(upco.childNodes);
+  if(upcom==0 && upcontent.innerHTML.includes(uptitle)){
+    upcontent.innerHTML=upcontent.innerHTML.replace(uptitle,"");
+    
+  }
+  else if(upcom>0 && !(upcontent.innerHTML.includes(uptitle))){
+    uptitle+=upcontent.innerHTML;
+    upcontent.innerHTML=uptitle;
+  }
+  if(curcom==0 && curcontent.innerHTML.includes(curtitle)){
+    curcontent.innerHTML=curcontent.innerHTML.replace(curtitle,"");
+    
+  }
+  else if(curcom>0 && !(curcontent.innerHTML.includes(curtitle))){
+    curtitle+=curcontent.innerHTML;
+    curcontent.innerHTML=curtitle;
+  }
+  if(curcom==0 && upcom==0 && document.getElementById("notask")==null){
+    upco.innerHTML=task;
+}
+else if((curcom>0 || upcom>0) && document.getElementById("notask")!=null){
+  
+  upco.removeChild(upco.childNodes[0]);
 
-// }
+
+}
+  
+  
+
+}
 function addtask(){
 
   var ed=document.getElementById("medate").value;
@@ -22,12 +49,10 @@ function addtask(){
   var sdate=sd[8]+sd[9]+"/"+sd[5]+sd[6]+"/"+sd[2]+sd[3];
   var title=document.getElementById("task-title").value;
   var taskdes=document.getElementById("mtextarea").value;
-  if(edate==null || sdate==null || title==null){
+  if(ed=="" || sd=="" || title==""){
     alert("Some mandatory fields are missing");
-    document.getElementById("medate").value=null;
-    document.getElementById("msdate").value=null;
-    document.getElementById("mtextarea").value=null;
-    document.getElementById("task-title").value=null;
+    nullfields();
+    return('');
   }
   if(datedifference(sdate,edate)<0){
     alert("invalid start date and end date");
@@ -40,12 +65,13 @@ function addtask(){
   else{
     if(datecomparison(sdate)>0){
       var task=document.getElementById("current");
-      nullfields();
+       var task1='<div class="col-12" onmouseenter="addicon('+"'"+taskname+taskno+"'"+','+"'"+taskdes+"'"+');" onmouseleave="removeicon('+"'"+taskname+taskno+"'"+','+"'"+taskdes+"'"+');remdes('+"'"+taskname+taskno+"'"+','+"'"+taskdes+"'"+');" style="padding-top: 1%;" ><div class="task-box task-current" id='+"'"+taskname+taskno+"'"+'><h3 class="task-title">'+title+'</h3><div style="padding-top: 20px; padding-left: 10%; padding-bottom: 10px;"><div class="progress" style="width: 90%;"><div class="progress-bar" role="progressbar" id="progress'+taskno+'" style="background-color: darkorange !important; width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div></div></div><div class="enddate" id="enddate'+taskno+'" style="float: right; padding-right: 5%; color: rgb(143, 141, 141)"><h5>'+edate+'</h5></div><div class="startdate" id="startdate'+taskno+'" style="padding-left: 6%; color: rgb(143, 141, 141)"><h5>'+sdate+'</h5></div><div id='+"'"+"taudescrip"+taskno+"'"+'></div></div></div>';
     }
     else{
       var task=document.getElementById("upcoming");
+      var task1='<div class="col-12" onmouseenter="addicon('+"'"+taskname+taskno+"'"+','+"'"+taskdes+"'"+');" onmouseleave="removeicon('+"'"+taskname+taskno+"'"+','+"'"+taskdes+"'"+');remdes('+"'"+taskname+taskno+"'"+','+"'"+taskdes+"'"+');" style="padding-top: 1%;" ><div class="task-box task-upcoming" id='+"'"+taskname+taskno+"'"+'><h3 class="task-title">'+title+'</h3><div style="padding-top: 20px; padding-left: 10%; padding-bottom: 10px;"><div class="progress" style="width: 90%;"><div class="progress-bar" role="progressbar" id="progress'+taskno+'" style="background-color: darkorange !important; width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div></div></div><div class="enddate" id="enddate'+taskno+'" style="float: right; padding-right: 5%; color: rgb(143, 141, 141)"><h5>'+edate+'</h5></div><div class="startdate" id="startdate'+taskno+'" style="padding-left: 6%; color: rgb(143, 141, 141)"><h5>'+sdate+'</h5></div><div id='+"'"+"taudescrip"+taskno+"'"+'></div></div></div>';
     }
-    var task1='<div class="col-12" onmouseenter="addicon('+"'"+taskname+taskno+"'"+','+"'"+taskdes+"'"+');" onmouseleave="removeicon('+"'"+taskname+taskno+"'"+','+"'"+taskdes+"'"+');remdes('+"'"+taskname+taskno+"'"+','+"'"+taskdes+"'"+');" style="padding-top: 1%;" ><div class="task-box" id='+"'"+taskname+taskno+"'"+'><h3 class="task-title">'+title+'</h3><div style="padding-top: 20px; padding-left: 10%; padding-bottom: 10px;"><div class="progress" style="width: 90%;"><div class="progress-bar" role="progressbar" id="progress'+taskno+'" style="background-color: darkorange !important; width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div></div></div><div class="enddate" id="enddate'+taskno+'" style="float: right; padding-right: 5%; color: rgb(143, 141, 141)"><h5>'+edate+'</h5></div><div class="startdate" id="startdate'+taskno+'" style="padding-left: 6%; color: rgb(143, 141, 141)"><h5>'+sdate+'</h5></div><div id='+"'"+"taudescrip"+taskno+"'"+'></div></div></div>';
+   
     task.innerHTML+=task1;
     
     var pro='progress'+taskno;
@@ -75,13 +101,18 @@ function addcross(){
   }
 }
 function removeid(id){
-  document.getElementById(id).remove();
+  document.getElementById(id).parentNode.remove();
+  //var arg='progress'+id[id.length-1];
+  document.body.removeEventListener("mouseover",taskprogress);
 }
 function taskprogress(id){
   var par=document.getElementById(id);
   
-  var edate=document.getElementById('enddate'+id[id.length-1]).textContent;
-  var sdate=document.getElementById('startdate'+id[id.length-1]).textContent;
+  var ed=document.getElementById('enddate'+id[id.length-1]);
+  var sd=document.getElementById('startdate'+id[id.length-1]);
+  if(ed!=null && sd!=null){
+  var edate=ed.textContent;
+  var sdate=sd.textContent;
   var total=datedifference(sdate,edate);
   var comp=datecomparison(sdate);
   
@@ -99,7 +130,7 @@ function taskprogress(id){
   if(percent>=75){
     par.style.backgroundColor='red';
   }
-  
+}
 
 }
 function datecomparison(sdate){
