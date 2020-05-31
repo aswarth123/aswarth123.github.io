@@ -6,7 +6,7 @@ function remove_title(){
   var curcontent=document.getElementById("currentcont");
   var curcom =document.getElementsByClassName("task-current").length;
   var upco=document.getElementById("upcoming");
-  var task='<div class="col-12" id="notask"><img src="tasks.jpeg" style="padding-top:5%; padding-left: 40%;"><h1 class="text-center" style="padding-top:2%; color: darkorange;"># NO TASKS LEFT</h1></div>';
+  var task='<div class="col-12" id="notask"><img src="tasks.jpeg" style="padding-top:5%; padding-left: 40%;"><h1 class="text-center" style="padding-top:2%; color: darkorange;"><span style="color:rgb(143, 141, 141)">#NO_TAS</span>KS_LEFT</h1></div>';
   
   
   var uptitle='<h3 class="display-6" id="upcoming-title" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); padding-top: 5%; text-align: center;">UPCO<span class="f">MING...</span></h3>';
