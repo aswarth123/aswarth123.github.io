@@ -11,7 +11,6 @@ function remove_title(){
   
   var uptitle='<h3 class="display-6" id="upcoming-title" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); padding-top: 5%; text-align: center;">UPCO<span class="f">MING...</span></h3>';
   var curtitle='<h3 class="display-6" id="current-title" style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color: rgb(143, 141, 141); padding-top: 5%; text-align: center;">CUR<span class="f">RENT</span></h3>';
-  console.log(upco.childNodes);
   if(upcom==0 && upcontent.innerHTML.includes(uptitle)){
     upcontent.innerHTML=upcontent.innerHTML.replace(uptitle,"");
     
