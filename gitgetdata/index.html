@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+      
+           img{
+               padding-top: 50px;
+           }           
+            .a{
+                padding-top: 10%;
+            }
+           #name,#public_repo{
+               padding-top: 20%;
+           }
+    </style>
+    
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center a">
+                <label for="username"> Enter Username</label>
+                <input type="text" name="username" id="user">
+                <button class="btn" onclick="getgitdata()">search</button>
+            </div>
+            <div class="col-12">
+                <div class="text-center" id="avtar">
+
+                </div>
+            </div>
+            <div class="col-6 text-center">
+                <p id="name"></p>
+            </div>
+            <div class="col-6 text-center">
+                <p id="public_repo"></p>
+            </div>
+        </div>
+    </div>
+    <p class="name"></p>
+    <p class="publicrepo"></p>
+
+
+
+<script src='main.js'></script>   
+</body>
+</html>
