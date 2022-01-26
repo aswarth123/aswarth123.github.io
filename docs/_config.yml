@@ -28,6 +28,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  aswarth123
+# Google Analytics
+google_analytics: UA-218227687-1
 
 # Build settings
 remote_theme: https://github.com/StartBootstrap/startbootstrap-clean-blog-jekyll
